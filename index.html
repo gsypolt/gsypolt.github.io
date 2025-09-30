@@ -21,9 +21,65 @@
   <!-- Custom styles for this template -->
   <link href="css/grayscale.min.css" rel="stylesheet">
 
+  <style>
+    /* Remove underlines from blog card links */
+    #blog a {
+      text-decoration: none !important;
+    }
+
+    #blog a:hover {
+      text-decoration: none !important;
+    }
+
+    #blog .card-title {
+      text-decoration: none !important;
+    }
+
+    #blog .card-title:hover {
+      text-decoration: none !important;
+    }
+
+    /* Light gray background for blog card headers */
+    #blog .card-header.text-primary {
+      background-color: #f8f9fa !important;
+    }
+
+    /* Fix navbar: only on small screens should have white background always */
+    .navbar {
+      background-color: white !important;
+    }
+
+    /* Fix navbar: transparent on desktop, white when scrolling */
+    @media (min-width: 992px) {
+      .navbar {
+        background-color: transparent !important;
+        transition: background-color 0.3s ease-in-out !important;
+      }
+
+      .navbar.navbar-shrink {
+        background-color: white !important;
+      }
+    }
+
+    /* Fix navbar active link underline for scrolled state */
+    .navbar.navbar-shrink .nav-link.active {
+      border-bottom: 0.25rem solid #64a19d !important;
+      color: #64a19d !important;
+    }
+
+    /* Fix iframe video sizing in talks section */
+    #talks .col-xl-8 {
+      width: 58% !important;
+    }
+
+    #talks .col-xl-4 {
+      width: 40% !important;
+    }
+  </style>
+
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background: linear-gradient(45deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) 100%), url('img/bg-blue.jpg'); background-size: cover; background-position: center;">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -61,23 +117,15 @@
       <div class="mx-auto text-center">
         <img class="w-50 h-50 mt-2 mb-1" src="img/masthead-gregsypolt.png" alt="">
         <h1 class="mx-auto my-0 text-uppercase">Greg Sypolt</h1>
-        <h2 class="text-white-50 mx-auto mt-2 mb-3">Senior Director of DevEx</h2>
+        <h2 class="text-white-50 mx-auto mt-2 mb-3">Senior Director of Developer Experience (DevX)</h2>
         <!-- <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a> -->
 
         <!-- Row of Social Media -->
           <div class="social d-flex justify-content-center"></div>
-            <a href="https://twitter.com/gregsypolt" class="mx-2">
-              <i class="fa-2x fab fa-twitter"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/gregsypolt/" class="mx-2">
-              <i class="fa-2x fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/gsypolt" class="mx-2">
-              <i class="fa-2x fab fa-github"></i>
-            </a>
-            <a href="mailto:greg@qualityelement.com" class="mx-2">
-              <i class="fa-2x far fa-envelope"></i>
-            </a>
+            <a href="https://twitter.com/gregsypolt" class="mx-2"><i class="fa-2x fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/gregsypolt/" class="mx-2"><i class="fa-2x fab fa-linkedin"></i></a>
+            <a href="https://github.com/gsypolt" class="mx-2"><i class="fa-2x fab fa-github"></i></a>
+            <a href="mailto:greg@qualityelement.com" class="mx-2"><i class="fa-2x far fa-envelope"></i></a>
           </div>
 
       </div>
@@ -446,12 +494,12 @@
   </section>
 
   <!-- Blog Section -->
-  <section id="blog" class="blog-section">
+  <section id="blog" class="blog-section" style="background: linear-gradient(45deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) 100%), url('img/bg-bluenight-sky.jpg'); background-size: cover; background-position: center;">
     <div class="container-fluid">
 
       
       <div class="row">
-        <div class="col-md-10 col-lg-8 mx-auto text-center">
+        <div class="col-md-10 col-lg-8 mx-auto text-center" style="padding: 100px;">
           <i class="fas fa-pencil-alt fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">Blog Posts</h2>
         </div>
@@ -1246,7 +1294,7 @@
           <i class="fab fa-linkedin"></i>
         </a>
         <a href="https://github.com/gsypolt" class="mx-2">
-          <i class="fab fa-github"></i>
+          <i class="fas fa-id-card"></i>
         </a>
         <a href="mailto:greg@qualityelement.com" class="mx-2">
           <i class="far fa-envelope"></i>
