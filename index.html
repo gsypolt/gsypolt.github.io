@@ -44,28 +44,7 @@
       background-color: #f8f9fa !important;
     }
 
-    /* Fix navbar: only on small screens should have white background always */
-    .navbar {
-      background-color: white !important;
-    }
-
-    /* Fix navbar: transparent on desktop, white when scrolling */
-    @media (min-width: 992px) {
-      .navbar {
-        background-color: transparent !important;
-        transition: background-color 0.3s ease-in-out !important;
-      }
-
-      .navbar.navbar-shrink {
-        background-color: white !important;
-      }
-    }
-
-    /* Fix navbar active link underline for scrolled state */
-    .navbar.navbar-shrink .nav-link.active {
-      border-bottom: 0.25rem solid #64a19d !important;
-      color: #64a19d !important;
-    }
+    /* Let the original grayscale.css handle navbar behavior - it already has the correct scroll implementation */
 
     /* Fix iframe video sizing in talks section */
     #talks .col-xl-8 {
@@ -115,7 +94,7 @@
 
       <!-- Masthead Subheading -->
       <div class="mx-auto text-center">
-        <img class="w-50 h-50 mt-2 mb-1" src="img/masthead-gregsypolt.png" alt="">
+        <img class="w-50 h-50 mt-2 mb-1" src="img/masthead-gregsypolt-optimized.png" alt="">
         <h1 class="mx-auto my-0 text-uppercase">Greg Sypolt</h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-3">Senior Director of Developer Experience (DevX)</h2>
         <!-- <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a> -->
@@ -194,7 +173,7 @@
 
           <div class="row g-4 mb-4">
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <div class="card text-center" style="height: 30rem;">
                   <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">Leadership</div>
                   <img src="img/leadership.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -204,7 +183,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <div class="card text-center" style="height: 30rem;">
                   <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">Testing & Quality Integration</div>
                   <img src="img/testing.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -214,7 +193,7 @@
                 </div>
               </div>
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <div class="card text-center" style="height: 30rem;">
                   <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">Programming & Automation</div>
                   <img src="img/code.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -223,7 +202,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <div class="card text-center" style="height: 30rem;">
                   <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">Cloud & Development Platforms</div>
                   <img src="img/cloud-solutions.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -236,7 +215,7 @@
           </div>
 
           <div class="row g-4 mb-4">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <div class="card text-center" style="height: 30rem;">
                     <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">AI & Developer Assistance</div>
                     <img src="img/configuration.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -245,7 +224,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <div class="card text-center" style="height: 30rem;">
                     <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">Developer Experience & Productivity Tools</div>
                     <img src="img/cicd.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -254,7 +233,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <div class="card text-center" style="height: 30rem;">
                     <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">Developer Productivity Measurement</div>
                     <img src="img/monitoring.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -263,7 +242,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <div class="card text-center" style="height: 30rem;">
                     <div class="card-header" style="height: 65px; display: flex; align-items: center; justify-content: center;">Developer Workflow Optimization</div>
                     <img src="img/more.svg" class="card-img mt-2 mx-auto d-block" style="height: 80px; width: 80px;">
@@ -494,7 +473,7 @@
   </section>
 
   <!-- Blog Section -->
-  <section id="blog" class="blog-section" style="background: linear-gradient(45deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) 100%), url('img/bg-bluenight-sky.jpg'); background-size: cover; background-position: center;">
+  <section id="blog" class="blog-section" style="background: linear-gradient(45deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) 100%), url('img/bg-bluenight-sky-optimized.jpg'); background-size: cover; background-position: center;">
     <div class="container-fluid">
 
       
@@ -507,7 +486,7 @@
       <div class="container">
         <!-- Blog Row Favorites -->
         <div class="row mb-2 justify-content-center">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-12 col-md-6 col-lg-3">
             <div class="card flex-md-row mb-4 box-shadow h-md-250" style="height: 25rem;">
               <div class="card-body d-flex flex-column align-items-start">
                 <strong class="d-inline-block mb-2 text-primary">Software Testing</strong>
@@ -521,7 +500,7 @@
               
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-12 col-md-6 col-lg-3">
               <div class="card flex-md-row mb-4 box-shadow h-md-250" style="height: 25rem;">
                   <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">Strategy</strong>
@@ -534,7 +513,7 @@
                   </div>
                 </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-12 col-md-6 col-lg-3">
               <div class="card flex-md-row mb-4 box-shadow h-md-250" style="height: 25rem;">
                   <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">Agile Development</strong>
@@ -557,7 +536,7 @@
           <div class="row mb-2 justify-content-center">
             <div class="row g-4 mb-4 justify-content-center">
 
-              <!-- <div class="col-lg-3 col-md-6">
+              <!-- <div class="col-12 col-md-6 col-lg-3">
                 <a href="future-blog-url">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Software Testing</div>
@@ -569,7 +548,7 @@
                  </a>
               </div>
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <a href="future-blog-url">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Open Source</div>
@@ -581,7 +560,7 @@
                 </a>
               </div> -->
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <a href="https://saucelabs.com/blog/tips-for-achieving-continuous-improvement-in-software-testing">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Software Testing</div>
@@ -593,7 +572,7 @@
                 </a>
               </div>
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <a href="https://saucelabs.com/blog/building-a-quality-platform-from-the-ground-up">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Strategy</div>
@@ -613,7 +592,7 @@
         <div class="container-fluid">
           <div class="row g-4 mb-4 justify-content-center">
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <a href="https://saucelabs.com/blog/the-role-quality-plays-in-your-service-level-agreement">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Software Testing</div>
@@ -625,7 +604,7 @@
                  </a>
               </div>
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <a href="https://saucelabs.com/blog/jest">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Open Source</div>
@@ -637,7 +616,7 @@
                 </a>
               </div>
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <a href="https://saucelabs.com/blog/what-is-your-communication-template-for-testing-results">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Software Testing</div>
@@ -649,7 +628,7 @@
                 </a>
               </div>
 
-              <div class="col-lg-3 col-md-6">
+              <div class="col-12 col-md-6 col-lg-3">
                 <a href="https://saucelabs.com/blog/three-pillars-of-app-quality-excellence">
                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                     <div class="card-header text-primary">Strategy</div>
@@ -668,7 +647,7 @@
             <div class="row mb-2 justify-content-center">
               <div class="row g-4 mb-4 justify-content-center">
   
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <a href="https://saucelabs.com/blog/using-aiml-and-production-data-to-improve-software-testing">
                     <div class="card text-white bg-dark h-100" style="height: 15rem;">
                       <div class="card-header text-primary">Software Testing</div>
@@ -680,7 +659,7 @@
                   </a>
                 </div>
   
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <a href="https://saucelabs.com/blog/avoiding-test-script-maintenance-nightmares">
                     <div class="card text-white bg-dark h-100" style="height: 15rem;">
                       <div class="card-header text-primary">Software Testing</div>
@@ -692,7 +671,7 @@
                   </a>
                 </div>
   
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <a href="https://saucelabs.com/blog/how-model-based-testing-expands-your-test-coverage">
                     <div class="card text-white bg-dark h-100" style="height: 15rem;">
                       <div class="card-header text-primary">Strategy</div>
@@ -704,7 +683,7 @@
                   </a>
                 </div>
   
-                <div class="col-lg-3 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                   <a href="https://saucelabs.com/blog/speed-up-your-tests-with-espresso-parallel-testing">
                     <div class="card text-white bg-dark h-100" style="height: 15rem;">
                       <div class="card-header text-primary">Android Testing</div>
@@ -723,7 +702,7 @@
               <div class="row mb-2 justify-content-center">
                 <div class="row g-4 mb-4 justify-content-center">
 
-                  <div class="col-lg-3 col-md-6">
+                  <div class="col-12 col-md-6 col-lg-3">
                     <a href="https://fixate.io/meet-practitioner-greg-sypolt/">
                       <div class="card text-white bg-dark h-100" style="height: 15rem;">
                         <div class="card-header text-primary">Interview</div>
@@ -735,7 +714,7 @@
                     </a>
                   </div>
 
-                  <div class="col-lg-3 col-md-6">
+                  <div class="col-12 col-md-6 col-lg-3">
                     <a href="https://saucelabs.com/blog/the-why-and-how-of-tap-compare-testing">
                       <div class="card text-white bg-dark h-100" style="height: 15rem;">
                         <div class="card-header text-primary">Strategy</div>
@@ -747,7 +726,7 @@
                     </a>
                   </div>
     
-                  <div class="col-lg-3 col-md-6">
+                  <div class="col-12 col-md-6 col-lg-3">
                     <a href="https://saucelabs.com/blog/using-canary-release-pipelines-to-achieve-continuous-testing">
                       <div class="card text-white bg-dark h-100" style="height: 15rem;">
                         <div class="card-header text-primary">Release Strategy</div>
@@ -759,7 +738,7 @@
                     </a>
                   </div>
     
-                  <div class="col-lg-3 col-md-6">
+                  <div class="col-12 col-md-6 col-lg-3">
                     <a href="https://saucelabs.com/blog/continuous-testing-in-practice-test-intelligently-by-tuning-ci-pipeline-code">
                       <div class="card text-white bg-dark h-100" style="height: 15rem;">
                         <div class="card-header text-primary">CI/CD</div>
@@ -779,7 +758,7 @@
                 <div class="row mb-2 justify-content-center">
                   <div class="row g-4 mb-4 justify-content-center">
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-12 col-md-6 col-lg-3">
                       <a href="https://saucelabs.com/blog/extended-debugging-with-sauce-labs">
                         <div class="card text-white bg-dark h-100" style="height: 15rem;">
                           <div class="card-header text-primary">Dev Tools</div>
@@ -791,7 +770,7 @@
                       </a>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-12 col-md-6 col-lg-3">
                       <a href="https://saucelabs.com/blog/choosing-a-ci-cd-tool">
                         <div class="card text-white bg-dark h-100" style="height: 15rem;">
                           <div class="card-header text-primary">CI/CD</div>
@@ -803,7 +782,7 @@
                       </a>
                     </div>
       
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-12 col-md-6 col-lg-3">
                       <a href="https://saucelabs.com/blog/nightwatchjs-makes-software-test-scripts-fun-and-easy">
                         <div class="card text-white bg-dark h-100" style="height: 15rem;">
                           <div class="card-header text-primary">Dev Tools</div>
@@ -815,7 +794,7 @@
                       </a>
                     </div>
       
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-12 col-md-6 col-lg-3">
                       <a href="https://saucelabs.com/blog/the-challenges-and-benefits-of-model-based-testing">
                         <div class="card text-white bg-dark h-100" style="height: 15rem;">
                           <div class="card-header text-primary">Software Testing</div>
@@ -835,7 +814,7 @@
                   <div class="row mb-2 justify-content-center">
                     <div class="row g-4 mb-4 justify-content-center">
 
-                      <div class="col-lg-3 col-md-6">
+                      <div class="col-12 col-md-6 col-lg-3">
                         <a href="https://saucelabs.com/blog/build-security-into-your-development-process-security-guards">
                           <div class="card text-white bg-dark h-100" style="height: 15rem;">
                             <div class="card-header text-primary">Security Testing</div>
@@ -847,7 +826,7 @@
                         </a>
                       </div>
 
-                      <div class="col-lg-3 col-md-6">
+                      <div class="col-12 col-md-6 col-lg-3">
                         <a href="https://saucelabs.com/blog/devising-a-testing-strategy-for-containers">
                           <div class="card text-white bg-dark h-100" style="height: 15rem;">
                             <div class="card-header text-primary">CI/CD</div>
@@ -859,7 +838,7 @@
                         </a>
                       </div>
         
-                      <div class="col-lg-3 col-md-6">
+                      <div class="col-12 col-md-6 col-lg-3">
                         <a href="https://saucelabs.com/blog/why-you-should-be-testing-in-production">
                           <div class="card text-white bg-dark h-100" style="height: 15rem;">
                             <div class="card-header text-primary">Software Testing</div>
@@ -871,7 +850,7 @@
                         </a>
                       </div>
         
-                      <div class="col-lg-3 col-md-6">
+                      <div class="col-12 col-md-6 col-lg-3">
                         <a href="https://upshotstories.com/stories/how-automated-testing-helped-gannett-focus-on-a-quality-product-over-managing-infrastructure?utm_source=post_utm_medium=linkedin1_utm_campaign=post122">
                           <div class="card text-white bg-dark h-100" style="height: 15rem;">
                             <div class="card-header text-primary">Strategy</div>
@@ -891,7 +870,7 @@
                     <div class="row mb-2 justify-content-center">
                       <div class="row g-4 mb-4 justify-content-center">
 
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-12 col-md-6 col-lg-3">
                           <a href="https://saucelabs.com/blog/ai-test-automation-the-ai-test-bots-are-coming">
                             <div class="card text-white bg-dark h-100" style="height: 15rem;">
                               <div class="card-header text-primary">Software Testing</div>
@@ -903,7 +882,7 @@
                           </a>
                         </div>
 
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-12 col-md-6 col-lg-3">
                           <a href="https://saucelabs.com/blog/achieving-continuous-integration-ci-excellence-through-test-automation">
                             <div class="card text-white bg-dark h-100" style="height: 15rem;">
                               <div class="card-header text-primary">CI/CD</div>
@@ -915,7 +894,7 @@
                           </a>
                         </div>
           
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-12 col-md-6 col-lg-3">
                           <a href="https://saucelabs.com/blog/outfitting-a-testing-tool-belt">
                             <div class="card text-white bg-dark h-100" style="height: 15rem;">
                               <div class="card-header text-primary">Dev Tools</div>
@@ -927,7 +906,7 @@
                           </a>
                         </div>
           
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-12 col-md-6 col-lg-3">
                           <a href="https://saucelabs.com/blog/discovering-security-vulnerabilities-with-selenium">
                             <div class="card text-white bg-dark h-100" style="height: 15rem;">
                               <div class="card-header text-primary">Security Testing</div>
@@ -947,7 +926,7 @@
                       <div class="row mb-2 justify-content-center">
                         <div class="row g-4 mb-4 justify-content-center">
 
-                          <div class="col-lg-3 col-md-6">
+                          <div class="col-12 col-md-6 col-lg-3">
                             <a href="https://saucelabs.com/blog/move-over-selenium-2-why-its-time-to-upgrade-to-selenium-3">
                               <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                 <div class="card-header text-primary">Selenium</div>
@@ -959,7 +938,7 @@
                             </a>
                           </div>
 
-                          <div class="col-lg-3 col-md-6">
+                          <div class="col-12 col-md-6 col-lg-3">
                             <a href="https://saucelabs.com/blog/new-relic-synthetics-monitoring-using-selenium">
                               <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                 <div class="card-header text-primary">Selenium</div>
@@ -971,7 +950,7 @@
                             </a>
                           </div>
             
-                          <div class="col-lg-3 col-md-6">
+                          <div class="col-12 col-md-6 col-lg-3">
                             <a href="https://saucelabs.com/blog/polymer-web-component-unit-testing">
                               <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                 <div class="card-header text-primary">Unit Testing</div>
@@ -983,7 +962,7 @@
                             </a>
                           </div>
             
-                          <div class="col-lg-3 col-md-6">
+                          <div class="col-12 col-md-6 col-lg-3">
                             <a href="https://saucelabs.com/blog/using-test-kitchen-for-local-testing">
                               <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                 <div class="card-header text-primary">Chef Testing</div>
@@ -1003,7 +982,7 @@
                         <div class="row mb-2 justify-content-center">
                           <div class="row g-4 mb-4 justify-content-center">
 
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-12 col-md-6 col-lg-3">
                               <a href="https://saucelabs.com/blog/visual-testing-with-applitools-and-sauce-labs">
                                 <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                   <div class="card-header text-primary">Visual Testing</div>
@@ -1015,7 +994,7 @@
                               </a>
                             </div>
 
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-12 col-md-6 col-lg-3">
                               <a href="https://saucelabs.com/blog/functional-testing-and-the-iot">
                                 <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                   <div class="card-header text-primary">Software Testing</div>
@@ -1027,7 +1006,7 @@
                               </a>
                             </div>
               
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-12 col-md-6 col-lg-3">
                               <a href="https://saucelabs.com/blog/unit-testing-chef-cookbooks-with-chefspec">
                                 <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                   <div class="card-header text-primary">Chef Testing</div>
@@ -1039,7 +1018,7 @@
                               </a>
                             </div>
               
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-12 col-md-6 col-lg-3">
                               <a href="https://saucelabs.com/blog/a-getting-started-guide-to-setting-up-jenkins">
                                 <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                   <div class="card-header text-primary">CI/CD</div>
@@ -1059,7 +1038,7 @@
                           <div class="row mb-2 justify-content-center">
                             <div class="row g-4 mb-4 justify-content-center">
 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://searchapparchitecture.techtarget.com/tip/The-basics-of-establishing-a-RESTful-API-testing-program">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">API Testing</div>
@@ -1071,7 +1050,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/get-started-with-protractor-testing-for-angularjs">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Dev Tools</div>
@@ -1083,7 +1062,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/write-great-cucumber-tests">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Software Testing</div>
@@ -1095,7 +1074,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://www.sumologic.com/blog/contributing-to-open-source-projects/">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Open Source</div>
@@ -1115,7 +1094,7 @@
                           <div class="row mb-2 justify-content-center">
                             <div class="row g-4 mb-4 justify-content-center">
 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/selenium-design-patterns">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Selenium</div>
@@ -1127,7 +1106,7 @@
                                 </a>
                               </div>
 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/planning-quality-architecture-for-2020">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Architecture</div>
@@ -1139,7 +1118,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/try-making-it-smaller-its-the-agile-way">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Agile Development</div>
@@ -1151,7 +1130,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/what-does-quality-strategy-mean">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Strategy</div>
@@ -1171,7 +1150,7 @@
                           <div class="row mb-2 justify-content-center">
                             <div class="row g-4 mb-4 justify-content-center">
 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                   <a href="https://saucelabs.com/blog/top-10-resources-for-test-automation-newbies">
                                     <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                       <div class="card-header text-primary">Dev Tools</div>
@@ -1183,7 +1162,7 @@
                                   </a>
                               </div>
 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://www.sumologic.com/blog/automated-testing/">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Software Testing</div>
@@ -1195,7 +1174,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/what-is-your-definition-of-done">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Agile Development</div>
@@ -1207,7 +1186,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/getting-the-existing-team-on-board-with-automation-scripts">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Strategy</div>
@@ -1227,7 +1206,7 @@
                           <div class="row mb-2 justify-content-center">
                             <div class="row g-4 mb-4 justify-content-center">
 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                   <a href="https://saucelabs.com/blog/the-benefits-of-parallel-testing">
                                     <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                       <div class="card-header text-primary">Strategy</div>
@@ -1239,7 +1218,7 @@
                                   </a>
                               </div>
 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/an-efficient-release-made-is-a-penny-earned">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">CI/CD</div>
@@ -1251,7 +1230,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/immutable-infrastructure">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">DevOps</div>
@@ -1263,7 +1242,7 @@
                                 </a>
                               </div>
                 
-                              <div class="col-lg-3 col-md-6">
+                              <div class="col-12 col-md-6 col-lg-3">
                                 <a href="https://saucelabs.com/blog/test-automation-kpis">
                                   <div class="card text-white bg-dark h-100" style="height: 15rem;">
                                     <div class="card-header text-primary">Strategy</div>
