@@ -1,0 +1,81 @@
+---
+const competencies = [
+  {
+    title: "Testing & Quality Integration",
+    icon: "test-tube",
+    skills: [
+      "Testing The Right Things",
+      "Infrastructure, Unit, API, Integration, Contract, UI Flows",
+      "Visual Testing",
+      "GenAI with Amazon Q",
+      "Autonomous Testing"
+    ]
+  },
+  {
+    title: "Leadership & Strategy",
+    icon: "trending-up",
+    skills: [
+      "Industry Blogger",
+      "Best Practices & Thought Leadership",
+      "Mentoring and Training",
+      "Strategist & Evangelist",
+      "Conference Speaker"
+    ]
+  },
+  {
+    title: "Engineering Practices",
+    icon: "code",
+    skills: [
+      "Culture of Quality",
+      "Agile Development",
+      "Reliable Test Automation",
+      "Continuous Integration",
+      "Build to the Test",
+      "Developer Experience"
+    ]
+  },
+  {
+    title: "Leadership Skills",
+    icon: "users",
+    skills: [
+      "Influencer",
+      "Self Awareness",
+      "Effective Communication",
+      "Learning Agility",
+      "Coaching and Mentoring",
+      "Leading Leaders and Individual Contributors"
+    ]
+  }
+];
+---
+
+<section id="competencies" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">
+      Core <span class="text-emerald-500">Competencies</span>
+    </h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {competencies.map((comp) => (
+        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-emerald-500 transition-all hover:transform hover:scale-105">
+          <div class="text-emerald-500 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {comp.icon === "test-tube" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>}
+              {comp.icon === "trending-up" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>}
+              {comp.icon === "code" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>}
+              {comp.icon === "users" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>}
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">{comp.title}</h3>
+          <ul class="space-y-2">
+            {comp.skills.map((skill) => (
+              <li class="text-sm text-slate-400 flex items-start">
+                <span class="text-emerald-500 mr-2">•</span>
+                <span>{skill}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

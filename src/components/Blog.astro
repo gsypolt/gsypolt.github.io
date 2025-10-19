@@ -1,0 +1,392 @@
+---
+const blogPosts = [
+  // {
+  //   title: "Rethinking the Role of “Journey” in Software Testing",
+  //   description: "Software quality is a journey, not a destination. Where is your organization in its quality journey?",
+  //   link: "#",
+  //   date: "2018-12-06"
+  // },
+  {
+    title: "What’s the Next Big Thing in Software Testing? Test Generation!",
+    description: "Here’s one idea that I think will play an increasingly important role in the future of software testing: test generation.",
+    link: "https://saucelabs.com/resources/blog/whats-the-next-big-thing-in-software-testing-test-generation",
+    date: "2019-07-23"
+  },
+  {
+    title: "Building an Agile Process Playbook for Software Testing",
+    description: "What exactly is agile testing, and why would we need an agile process playbook for software testing? Let me explain!",
+    link: "https://saucelabs.com/resources/blog/building-an-agile-process-playbook-for-software-testing",
+    date: "2019-04-18"
+  },
+  {
+    title: "Tips for Achieving Continuous Improvement in Software Testing",
+    description: "To continuously enhance your software testing process, focus on these five organizational and technical strategies for faster, \
+    more efficient, and productive results.",
+    link: "https://saucelabs.com/resources/blog/tips-for-achieving-continuous-improvement-in-software-testing",
+    date: "2019-02-19"
+  },
+  {
+    title: "Building a Quality Platform From The Ground Up",
+    description: "To move towards elite quality status in an agile environment, building a Quality Platform \
+    from the ground up is essential for increasing your quality maturity, driving value, and fostering \
+    shared accountability.",
+    link: "https://saucelabs.com/blog/building-a-quality-platform-from-the-ground-up",
+    date: "February 4, 2020"
+  },
+  {
+    title: "The role quality plays in your service level agreement",
+    description: "A focused Service-Level Agreement (SLA) for software testing is crucial for managing expectations, \
+    defining quality, reducing risk, and ensuring success across the entire software development lifecycle.",
+    link: "https://saucelabs.com/blog/the-role-quality-plays-in-your-service-level-agreement",
+    date: "August 15, 2019"
+  },
+  // {
+  //   title: "Jest",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/jest",
+  //   date: "April 18, 2019"
+  // },
+  {
+    title: "What is Your Communication Template for Testing Results?",
+    description: "A strong communication template is the key to effectively sharing software testing \
+    results with all stakeholders—including developers, QA, and non-technical staff—to drive continuous improvement \
+    in a DevOps environment.",
+    link: "https://saucelabs.com/blog/what-is-your-communication-template-for-testing-results",
+    date: "March 19, 2019"
+  },
+  // {
+  //   title: "Three Pillars of App Quality Excellence",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/three-pillars-of-app-quality-excellence",
+  //   date: "December 5, 2019"
+  // },
+  {
+    title: "Using AI/ML and Production Data to Improve Software Testing",
+    description: "This post explores how to leverage AI/ML together with production data to conduct smarter \
+    regression testing and enhance overall software system quality.",
+    link: "https://saucelabs.com/blog/using-aiml-and-production-data-to-improve-software-testing",
+    date: "February 14, 2019"
+  },
+  {
+    title: "Avoiding Test Script Maintenance Nightmares",
+    description: "This article provides practical strategies and tips for making the often-tedious process of test \
+    script maintenance faster, easier, and less of a nightmare.",
+    link: "https://saucelabs.com/blog/avoiding-test-script-maintenance-nightmares",
+    date: "November 1, 2018"
+  },
+//   {
+//   title: "How Model-Based Testing Expands Your Test Coverage",
+//   description: "",
+//   link: "https://saucelabs.com/blog/how-model-based-testing-expands-your-test-coverage",
+//   date: "October 9, 2018"
+// },
+  {
+    title: "Speed Up Your Tests with Espresso Parallel Testing",
+    description: "o achieve faster feedback and better speed goals in native mobile app testing, utilize Espresso parallel \
+    testing on emulators with every pull request, which helps resolve key dilemmas like lack of parallelism and test inefficiency.",
+    link: "https://saucelabs.com/blog/speed-up-your-tests-with-espresso-parallel-testing",
+    date: "September 6, 2018"
+  },
+  // {
+  //   title: "Meet the practitioner: Greg \"Quality Built-in\" Sypolt",
+  //   description: "",
+  //   link: "https://fixate.io/meet-practitioner-greg-sypolt/",
+  //   date: "November 20, 2018"
+  // },
+  // {
+  //   title: "The Why and How of Tap Compare Testing",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/the-why-and-how-of-tap-compare-testing",
+  //   date: "August 7, 2018"
+  // },
+  {
+    title: "Using Canary Release Pipelines to Achieve Continuous Testing",
+    description: "A canary release pipeline is a strategy that enables testing in production by gradually rolling out new software versions \
+    to a small subset of users, thus helping to achieve continuous testing. Gemini can make mistakes, so double-check it.",
+    link: "https://saucelabs.com/blog/using-canary-release-pipelines-to-achieve-continuous-testing",
+    date: "June 20, 2018"
+  },
+  // {
+  //   title: "Test Intelligently by Tuning CI Pipeline Code",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/continuous-testing-in-practice-test-intelligently-by-tuning-ci-pipeline-code",
+  //   date: "May 23, 2018"
+  // },
+  {
+    title: "Extended Debugging with Sauce Labs",
+    description: "The Extended Debugging feature in Sauce Labs provides QA engineers with deeper insights, including network request data and \
+    browser console logs, to quickly troubleshoot automated test failures and identify application issues before release.",
+    link: "https://saucelabs.com/blog/extended-debugging-with-sauce-labs",
+    date: "April 12, 2018"
+  },
+  {
+    title: "Choosing a CI/CD Tools",
+    description: "When selecting a Continuous Integration/Continuous Delivery (CI/CD) tool, the decision should be guided by five key factors to \
+    ensure the tool meets your project's specific needs and budget despite the large number of similar options available.",
+    link: "https://saucelabs.com/blog/choosing-a-ci-cd-tool",
+    date: "March 17, 2018"
+  },
+  {
+    title: "Nightwatch.js Makes Software Test Scripts Fun and Easy",
+    description: "Nightwatch.js is a clean, straightforward Selenium wrapper that simplifies and accelerates the development of front-end test \
+    scripts using JavaScript and Node.js by offering numerous out-of-the-box commands, assertions, and custom helper capabilities.",
+    link: "https://saucelabs.com/blog/nightwatchjs-makes-software-test-scripts-fun-and-easy",
+    date: "February 15, 2018"
+  },
+  {
+    title: "The Challenges and Benefits of Model-Based Testing",
+    description: "Model-Based Testing (MBT) is an evolving test automation approach that involves generating test cases from a system model, \
+    offering significant advantages but also presenting certain challenges which are detailed alongside inspiration for adopting this methodology.",
+    link: "https://saucelabs.com/blog/the-challenges-and-benefits-of-model-based-testing",
+    date: "January 17, 2018"
+  },
+  // {
+  //   title: "Build Security into Your Development Process: Security Guards",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/build-security-into-your-development-process-security-guards",
+  //   date: "October 20, 2017"
+  // },
+  {
+    title: "Devising a Testing Strategy for Containers",
+    description: "To successfully leverage containers for faster app deployment and integration, organizations must develop an effective testing strategy \
+    by borrowing ideas from Infrastructure-as-Code (IaC) and utilizing automated testing grids like Sauce Labs to test containerized applications without \
+    maintaining their own infrastructure.",
+    link: "https://saucelabs.com/blog/devising-a-testing-strategy-for-containers",
+    date: "September 27, 2017"
+  },
+  {
+    title: "Why You Should Be Testing in Production",
+    description: "While traditional Quality Assurance relies on staging environments, testing in production provides a more authentic assessment of software \
+    function by using real-world user data and environments, which can reveal issues that staging cannot accurately replicate.",
+    link: "https://saucelabs.com/blog/why-you-should-be-testing-in-production",
+    date: "September 6, 2017"
+  },
+  {
+    title: "How Automated Testing Helped Gannett Focus on a Quality Product...",
+    description: "By implementing a comprehensive automated testing strategy, Gannett was able to shift responsibility for quality to development teams, drastically \
+    reduce errors and release delays caused by manual testing, and accelerate application releases from weeks to days or hours.",
+    link: "https://upshotstories.com/stories/how-automated-testing-helped-gannett-focus-on-a-quality-product-over-managing-infrastructure?utm_source=post_utm_medium=linkedin1_utm_campaign=post122",
+    date: "August 29, 2017"
+  },
+  {
+    title: "The AI Test Bots Are Coming",
+    description: "AI test automation is an emerging and increasingly significant approach in automated testing that utilizes intelligent bots to enhance testing capabilities, \
+    and this article explores its importance, application, and the challenges that must be overcome for its full realization.",
+    link: "https://saucelabs.com/blog/ai-test-automation-the-ai-test-bots-are-coming",
+    date: "August 22, 2017"
+  },
+  {
+    title: "Achieving CI Excellence through Test Automation",
+    description: "Achieving Continuous Integration (CI) excellence requires a deep integration of test automation with DevOps practices, which is transforming the traditional \
+    Test Automation role and can be understood by examining its three core tiers: practices, implementation, and the new automation experience.",
+    link: "https://saucelabs.com/blog/achieving-continuous-integration-ci-excellence-through-test-automation",
+    date: "June 14, 2017"
+  },
+  // {
+  //   title: "Outfitting a Testing Tool Belt",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/outfitting-a-testing-tool-belt",
+  //   date: "May 2, 2017"
+  // },
+  {
+    title: "Discovering Security Vulnerabilities with Selenium",
+    description: "Since security is often neglected in the development lifecycle, testing tools like Selenium can be effectively used as a defense mechanism to discover and \
+    eliminate common web application security vulnerabilities, such as those defined by OWASP.",
+    link: "https://saucelabs.com/blog/discovering-security-vulnerabilities-with-selenium",
+    date: "April 4, 2017"
+  },
+  // {
+  //   title: "Move Over, Selenium 2: Why It's Time to Upgrade to Selenium 3",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/move-over-selenium-2-why-its-time-to-upgrade-to-selenium-3",
+  //   date: "March 30, 2017"
+  // },
+  {
+    title: "New Relic Synthetics Monitoring Using Selenium",
+    description: "New Relic Synthetics Monitoring utilizes Selenium to simulate user behavior on websites from various global locations, collecting data on performance metrics \
+    like load times and failures to proactively detect and prevent issues before they impact customers.",
+    link: "https://saucelabs.com/blog/new-relic-synthetics-monitoring-using-selenium",
+    date: "February 28, 2017"
+  },
+  {
+    title: "Polymer Web Component Unit Testing",
+    description: "Because traditional testing tools like Selenium are not fully compatible with Google's Polymer Project for creating custom, standards-aligned HTML web \
+    components, a specific testing strategy is essential to ensure quality for Polymer web development projects.",
+    link: "https://saucelabs.com/blog/polymer-web-component-unit-testing",
+    date: "February 14, 2017"
+  },
+  {
+    title: "Using Test-Kitchen for Local Testing",
+    description: "Test Kitchen is a self-service, local testing framework that uses virtual technologies to perform integration testing for Chef Cookbooks and effectively \
+    isolate and debug application or infrastructure code across multiple operating systems.",
+    link: "https://saucelabs.com/blog/using-test-kitchen-for-local-testing",
+    date: "January 23, 2017"
+  },
+  {
+    title: "Visual Testing With Applitools and Sauce Labs",
+    description: "Applitools Eyes is a groundbreaking tool that enables automated visual validation of user interface (UI) components by integrating visual checkpoints into \
+    automated testing frameworks like Selenium and Appium, allowing software testers to restore the visual testing capabilities lost during the shift from manual testing.",
+    link: "https://saucelabs.com/blog/visual-testing-with-applitools-and-sauce-labs",
+    date: "January 9, 2017"
+  },
+  {
+    title: "Functional Testing And The IoT",
+    description: "As the Internet of Things (IoT) expands and connects everyday gadgets, ensuring their quality and security will require a challenging blend of existing and \
+    innovative functional testing strategies.",
+    link: "https://saucelabs.com/blog/functional-testing-and-the-iot",
+    date: "December 9, 2016"
+  },
+  {
+    title: "Unit Testing Chef Cookbooks with ChefSpec",
+    description: "ChefSpec is an easy-to-read, fast-feedback unit testing framework for Chef cookbooks that allows developers to validate infrastructure code changes without \
+    relying on a virtual or cloud machine.",
+    link: "https://saucelabs.com/blog/unit-testing-chef-cookbooks-with-chefspec",
+    date: "November 23, 2016"
+  },
+  // {
+  //   title: "A Getting Started Guide to Setting Up Jenkins",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/a-getting-started-guide-to-setting-up-jenkins",
+  //   date: "August 26, 2016"
+  // },
+  {
+    title: "The basics of establishing a RESTful API testing program",
+    description: "To build a modern delivery pipeline and achieve quality upfront, teams must shift their testing focus from heavy UI tests to the testing pyramid methodology by \
+    establishing a RESTful API testing program that forms the necessary lower-level foundation of their testing portfolio.",
+    link: "https://searchapparchitecture.techtarget.com/tip/The-basics-of-establishing-a-RESTful-API-testing-program",
+    date: "July 17, 2016"
+  },
+  {
+    title: "Get Started with Protractor Testing for AngularJS",
+    description: "Protractor is the dedicated end-to-end testing framework for AngularJS applications, and this guide provides new software developers in test with the fundamentals \
+    needed to establish a firm foundation in Protractor testing.",
+    link: "https://saucelabs.com/blog/get-started-with-protractor-testing-for-angularjs",
+    date: "April 6, 2016"
+  },
+  {
+    title: "Write Great Cucumber Tests﻿",
+    description: "Cucumber is a JavaScript methodology that facilitates Behavior-Driven Development (BDD) by encouraging collaboration across a software project and establishing a \
+    foundation of coding standards and design patterns for test automation.",
+    link: "https://saucelabs.com/blog/write-great-cucumber-tests",
+    date: "March 14, 201"
+  },
+  {
+    title: "Contributing to Open-Source Projects",
+    description: "Contributing to an existing open-source project, such as Selenium, is vital for its longevity and success, offering individuals a chance to give back to the community, \
+    gain experience, and participate in a meaningful project through various roles that do not always require coding.",
+    link: "https://www.sumologic.com/blog/contributing-to-open-source-projects/",
+    date: "March 11, 2016"
+  },
+  {
+    title: "Selenium Design Patterns",
+    description: "Understanding design patterns is highly recommended for test automation, particularly with Selenium, as they provide reusable solutions to common software design \
+    problems that can significantly accelerate development and reduce maintenance overhead.",
+    link: "https://saucelabs.com/blog/selenium-design-patterns",
+    date: "February 11, 2016"
+  },
+  {
+    title: "Planning Quality Architecture for 2020",
+    description: "Inspired by the concept of elite companies prioritizing infrastructure, planning a quality architecture for the future of software development involves a 'quality-first' \
+    approach centered on automation, scalability, recoverability, and analytics.",
+    link: "https://saucelabs.com/blog/planning-quality-architecture-for-2020",
+    date: "January 11, 2016"
+  },
+  // {
+  //   title: "Try Making It Smaller - It's The Agile Way",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/try-making-it-smaller-its-the-agile-way",
+  //   date: "November 4 2015"
+  // },
+  {
+    title: "What Does Quality Strategy Mean?",
+    description: "A quality strategy is a defined set of approved quality activities, including automation, manual testing, and reviews, that are executed in every sprint and release cycle, \
+    starting with investment in great user stories, to consistently deliver high-quality software and reduce release risk.",
+    link: "https://saucelabs.com/blog/what-does-quality-strategy-mean",
+    date: "October 27, 2015"
+  },
+  {
+    title: "Top 10 Resources for Test Automation Newbies",
+    description: "This post compiles Top 10 Resources to help new test automation engineers stay focused, select a primary technology to master, and avoid getting sidetracked on their learning journey.",
+    link: "https://saucelabs.com/blog/top-10-resources-for-test-automation-newbies",
+    date: "October 15, 2015"
+  },
+  {
+    title: "Automated Testing in a DevOps World",
+    description: "In a DevOps World, automated testing is a core objective that simplifies the testing effort by using scripts to execute repeatable tests, provide fast feedback, eliminate human error, \
+    and this post outlines five steps for a proper automation implementation.",
+    link: "https://www.sumologic.com/blog/automated-testing/",
+    date: "September 17, 2015"
+  },
+  {
+    title: "What is your definition of \"Done\"?",
+    description: "The Definition of Done (DoD) is a clear and concise, team-approved list of requirements that a software increment must satisfy to be considered a completed user story, sprint, or a \
+    release-ready component, ensuring everyone understands what 'done' means for the project.",
+    link: "https://saucelabs.com/blog/what-is-your-definition-of-done",
+    date: "September 17, 2015"
+  },
+  {
+    title: "Getting the Existing Team On Board with Automation",
+    description: "To meet business demands for speed and quality, organizations must introduce automated testing to their existing manual testing teams, which requires treating the initial presentation \
+    as a critical 'job interview' to properly educate, set expectations, and address emotional reactions about job security.",
+    link: "https://saucelabs.com/blog/getting-the-existing-team-on-board-with-automation-scripts",
+    date: "September 3, 2015"
+  },
+  // {
+  //   title: "The Benefits of Parallel Testing",
+  //   description: "",
+  //   link: "https://saucelabs.com/blog/the-benefits-of-parallel-testing",
+  //   date: "August 8, 2015"
+  // },
+  {
+    title: "An Efficient Release Made is a Penny Earned",
+    description: "Implementing Continuous Integration (CI) and automated testing is a cost-effective change for software development organizations that helps deliver software faster with built-in quality, \
+    but requires a prior analysis of investment cost, timeline, and ROI (return on investment) to justify its adoption.",
+    link: "https://saucelabs.com/blog/an-efficient-release-made-is-a-penny-earned",
+    date: "July 9, 2015"
+  },
+  {
+    title: "Immutable Infrastructure",
+    description: "Immutable infrastructure is a modern cloud-based approach where servers are treated as commodities, and instead of making changes to existing virtual servers or containers, a new image is \
+    built and deployed while the old instance is completely terminated.",
+    link: "https://saucelabs.com/blog/immutable-infrastructure",
+    date: "June 23, 2015"
+  },
+  {
+    title: "Test Automation KPI's",
+    description: "After adopting automation to gain speed and consistency, a team must focus on establishing the right Key Performance Indicators (KPIs) and a Continuous Integration (CI) process to measure\
+     progress, improve strategy, and achieve objectives like rapidly deploying code changes.",
+    link: "https://saucelabs.com/blog/test-automation-kpis",
+    date: "June 4, 2015"
+  },
+];
+---
+
+<section id="blog" class="py-20 px-4 bg-slate-800/50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">
+      Thought <span class="text-emerald-500">Leadership</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {blogPosts.map((post) => (
+        <div class="bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-emerald-500 transition-all flex flex-col">
+          <h3 class="text-xl font-bold mb-3 text-white">{post.title}</h3>
+          {post.date && (
+            <p class="text-sm text-emerald-500 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          )}
+          <p class="text-slate-400 mb-4 flex-grow">{post.description}</p>
+          <a
+            href={post.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-emerald-500 hover:text-emerald-400 inline-flex items-center gap-2 mt-auto"
+          >
+            Read More
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

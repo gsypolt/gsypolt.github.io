@@ -1,0 +1,119 @@
+---
+const presentations = [
+  {
+    title: "How EVERFI Moved From No Automation To Continuous Test Generation In 9 Months",
+    description: "Imagine you’re responsible for a platform designed to drive impactful change in the world, \
+    used by millions of learners annually to gain new tools and skills. Now imagine that the platform consists of \
+    102 components that combine to form different pages and learning paths, but you have no automation to test this \
+    fast-changing, complex system. This is the challenge that EVERFI overcame with model-based test generation,\
+     moving in less than 9 mths from no automation to test generation for 52 courses.",
+    thumbnail: "/images/presentations/everfi-moved-from-no-automation.png",
+    pdfUrl: "/presentations/quality-engineering-scale.pdf"
+  },
+  {
+    title: "Developer Experience Best Practices",
+    description: "Building automation-first development workflows",
+    thumbnail: "/images/presentation-2.png",
+    pdfUrl: "/presentations/devex-best-practices.pdf"
+  },
+];
+---
+
+<section class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">
+      Conference <span class="text-emerald-500">Presentations</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {presentations.map((presentation) => (
+        <div 
+          class="bg-slate-900 rounded-lg border border-slate-700 hover:border-emerald-500 transition-all cursor-pointer overflow-hidden"
+          data-pdf-url={presentation.pdfUrl}
+          data-presentation-title={presentation.title}
+        >
+          <div class="aspect-video bg-slate-800 overflow-hidden">
+            <img 
+              src={presentation.thumbnail} 
+              alt={presentation.title}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-white">{presentation.title}</h3>
+            <p class="text-slate-400 mb-4">{presentation.description}</p>
+            <button class="text-emerald-500 hover:text-emerald-400 flex items-center gap-2">
+              View Presentation
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- PDF Preview Modal -->
+<div id="pdf-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+  <div class="bg-slate-900 rounded-lg max-w-6xl w-full h-[90vh] flex flex-col">
+    <div class="flex justify-between items-center p-4 border-b border-slate-700">
+      <h3 id="modal-title" class="text-xl font-bold text-white"></h3>
+      <button id="close-modal" class="text-slate-400 hover:text-white transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 p-4">
+      <iframe 
+        id="pdf-viewer" 
+        class="w-full h-full rounded border border-slate-700"
+        title="PDF Presentation Viewer"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  const presentationCards = document.querySelectorAll('[data-pdf-url]');
+  const modal = document.getElementById('pdf-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const pdfViewer = document.getElementById('pdf-viewer');
+  const closeModalBtn = document.getElementById('close-modal');
+
+  presentationCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const pdfUrl = card.getAttribute('data-pdf-url');
+      const title = card.getAttribute('data-presentation-title');
+      
+      modalTitle.textContent = title;
+      pdfViewer.src = pdfUrl;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  const closeModal = () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    pdfViewer.src = '';
+  };
+
+  closeModalBtn?.addEventListener('click', closeModal);
+  
+  // Close modal when clicking outside
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+</script>
