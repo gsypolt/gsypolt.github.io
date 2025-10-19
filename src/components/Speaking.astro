@@ -1,0 +1,181 @@
+---
+import { date } from "astro:schema";
+
+const speakingEngagements = [
+  {
+    title: "Applitools Customer Spotlight",
+    platform: "Greg Sypolt - EVERFI",
+    date: "April 2023",
+    description: "The most important piece of it is it actually provides this inventory of your system, the source of truth of what it will look like out in the wild",
+    link: "https://youtu.be/bzgS2Ds6FfI?si=yPCUbk1ZvABLu55k",
+    image: "" 
+  },
+  {
+    title: "Thoughts on Test Automation Frameworks",
+    platform: "Applitool: Future of Testing",
+    date: "October 2021",
+    description: "Expert panel participant with Joe Colantonio (moderator), Bijoya Chatterjee, Marie Drake, Jeff Wilkinson",
+    link: "https://applitools.com/event/expert-panel-thoughts-on-test-automation-frameworks/",
+    image: "" 
+  },
+  {
+    title: "Front-End Test Fest",
+    platform: "Applitools",
+    date: "June 2021",
+    description: "Educational courses and quality digital transformation with model-based testing at EVERFI",
+    link: "https://applitools.com/on-demand-videos/front-end-test-fest-june-2021/",
+    image: "" 
+  },
+  {
+      title: "Building a Culture of Quality Excellence",
+      platform: "Applitools Webinar",
+      date: "July 2020",
+      description: "Every team member must be accountable for the quality of the application, and understand their role in delivering it.",
+      link: "https://youtu.be/X6h6mXthF-c?si=6NSeckEcme8zlB5w",
+      image: "" 
+  },
+  {
+    title: "Quality, Coverage, and Teamwork: The Holy Trinity of USA TODAY's Winning Dev/Test Team",
+    platform: "Applitools Webinar",
+    date: "May 2019",
+    description: "Gives us a detailed tour of how he built his Dev/Test team for success – including: hiring test engineers, organizational culture, must-have tools, work processes, and best practices.",
+    link: "https://youtu.be/LDiqIXIlG-8?si=-cKgTau8Z6hOzrLy",
+    image: "" 
+  },
+  {
+    title: "Live Podcat with Digital Anarchist",
+    platform: "SauceCon 2019",
+    date: "April 2019",
+    description: "Greg Sypolt and Aaron Wolford from Gannett (USA Today) at SauceCon 2019 \
+    discusses the importance of embracing quality and automation to make apps better on their \
+    teams.",
+    link: "https://videos.files.wordpress.com/UYFoLj7v/greg-sypolt-aaron-wolford-gannett-saucecon-2019_dvd.mp4",
+    image: "" 
+  },
+  {
+    title: "Wizard of Oz Testing, Panel Speaks",
+    platform: "SauceCon 2019",
+    date: "April 2019",
+    description: "A moderator for a testing panel focused on the journey to CI/CD \
+    with Docker and Kubernetes, covering topics from continuous testing best practices \
+    and organizational transformation to new open source testing tools, scriptless \
+    and visual QA, and how to leverage analytics and prioritize automation.",
+    link: "https://youtu.be/BjIXjRWz13E?si=_F2VUrj2aQWsEHEg",
+    image: "" 
+  },
+  {
+    title: "Inserting Quality Into Every Step of Deployment",
+    platform: "Sauce Labs Webinar",
+    date: "August 2018",
+    description: "The shift-left and shift-right movements are changing delivery chains, \
+    leading to tighter release cycles and a greater focus on production, with Continuous \
+    Testing emerging to integrate test considerations into production for improved \
+    responsiveness and application quality.",
+    link: "https://youtu.be/ub_PFYT9jgg?si=uCM7CZchJCQKA8fw",
+    image: "" 
+  },
+  {
+    title: "Achieving CI Excellence Through Test Automation",
+    platform: "Sauce Con 2018",
+    date: "May 2018",
+    description: "At Gannett | USA Today Network, the evolving Test Automation role is already \
+    blurring with DevOps by owning the Continuous Integration (CI) pipeline, defining its best \
+    practices, and acting as the quality gatekeeper for product releases.",
+    link: "https://youtu.be/0KzrOXjdS9M?si=XiCA6uhvxiTNdq-M",
+    image: "" 
+  },
+  {
+    title: "CI Excellence with Test Automation Engineers",
+    platform: "Selenium 2017",
+    date: "April 2017",
+    description: "At Gannett | USA Today Network, the evolving Test Automation role is already \
+    merging with DevOps by owning the Continuous Integration (CI) pipeline and serving as the \
+    quality gatekeeper, a transformation that Greg will detail by dividing CI excellence into \
+    tiers covering practices, implementation, and the new Test Automation experience.",
+    link: "https://youtu.be/oscXgSdUJv4?si=h-idkrs-eKWowE1v",
+    image: "" 
+  },
+  {
+    title: "This Is My Architecture: AWS Device Farm and Applitools",
+    platform: "AWS re:Invent 2017",
+    date: "December 2017",
+    description: "n this episode of This Is My Architecture, Greg from Gannett | USA TODAY Network \
+    details how they manage the challenge of testing and deploying updates multiple times a day to \
+    over 100 mobile applications across various devices by using AWS Device Farm, Jenkins on EC2, \
+    Artifactory, and Applitools.",
+    link: "https://youtu.be/3ZpEhfEiS8U?si=LO7HIAKh6Rmuy_kJ",
+    image: "" 
+  },
+  {
+    title: "171: CI Awesomeness with Test Automation",
+    platform: "Test Guild Podcast",
+    date: "September 2017",
+    description: "In this episode of Test Talk, Greg Sypolt will discuss how to transform \
+    automated tests to speed up development and reduce maintenance, sharing how his team uses \
+    test automation to achieve Continuous Integration (CI) and DevOps excellence.",
+    link: "https://testguild.com/podcast/automation/171-ci-test-automation-greg-sypolt/",
+    image: "" 
+  },
+  {
+    title: "Using Design Patterns to Improve Automated Testing",
+    platform: "Sauce Con 2017",
+    date: "June 2017",
+    description: "Design patterns in software engineering are general, reusable solutions to \
+    common problems, and while not strictly required for Selenium development, a seasoned \
+    automation engineer understands their necessity for speeding up development and reducing \
+    maintenance impact, which is why elite companies dedicate an experienced architect to oversee \
+    this process.",
+    link: "https://youtu.be/gCNMZ92ksCw?si=YzbxFfNsvxvhGXjt",
+    image: "" 
+  },
+  {
+    title: "Test and Debug Your Mobile Apps on Real Android/iOS Devices in the Cloud with AWS Device Farm",
+    platform: "AWS re:Invent 2016",
+    date: "December 2016",
+    description: "Gannett transitioned from time-consuming manual processes to fast, repeatable automation \
+    using Chef, Scalr, AWS, and Jenkins, enabling them to efficiently scale their continuous \
+    integration pipeline and build/test over 100 Android native apps on Amazon EC2 and Device Farm.",
+    link: "https://youtu.be/Y0WbKMJ6M6I?si=i02h_wsV-9s1ZUiO",
+    image: "" 
+  },
+];
+
+---
+
+<section id="speaking" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">
+      Speaking <span class="text-emerald-500">Engagements</span>
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {speakingEngagements.map((event) => (
+        <div class="bg-slate-800/50 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all overflow-hidden">
+          {event.image && (
+            <img
+              src={event.image}
+              alt={event.title}
+              class="w-full h-48 object-cover"
+            />
+          )}
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">{event.title}</h3>
+            <div class="text-indigo-400 mb-2">{event.platform}</div>
+            {event.date && <div class="text-slate-400 text-sm mb-4">{event.date}</div>}
+            <p class="text-slate-300 mb-4">{event.description}</p>
+            <a
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-emerald-500 hover:text-emerald-400 inline-flex items-center gap-2"
+            >
+              View Recording
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

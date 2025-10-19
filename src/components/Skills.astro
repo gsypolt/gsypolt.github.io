@@ -1,0 +1,64 @@
+---
+const technicalSkills = {
+  "Testing & Quality Integration": [
+    "Selenium", "Cypress", "Playwright", "Jest", "NightwatchJS", 
+    "Appium", "Testim", "Web Page Test", "Puppeteer", 
+    "Espresso", "XCUI", "Earl Grey", "Custom Selenium Grid",
+    "Model-Based Testing (Simulato, Testmodeller.io)", "SonarQube", 
+    "ArtilleryIO",  
+  ],
+  "Programming & Automation": [
+    "JavaScript", "ReactJS", "Angular", "Typescript",
+    "Golang", "Python", "Ruby", "Ruby on Rails", "NodeJS", 
+    "BackboneJS", "Workflow Automation", "Developer Tool Integration"
+  ],
+  "Agile Methodologies": [
+    "Agile", "SAFe", "Scrum", "Kanban"
+  ],
+  "AI & Developer Assistance": [
+    "Amazon Q", "Moveworks", "GitLab Duo", "Atlassian Intelligence", 
+    "Claude", "Gemini", "chatGPT", "AI-powered Code Review", "Developer Chatbots"
+  ],
+  "Cloud & Infrastructure": [
+    "AWS", "GCP", "AWS Device Farm", "Wonder Proxy", "Sauce Labs", "Applitools",
+    "AWS Device Farm"
+  ],
+  "DevOps & Containers": [
+    "Terraform", "Helmchart", "Kubernetes", "Docker", 
+    "Quay", "Artifactory", "HashiCorp Vault"
+  ],
+  "Developer Experience & Productivity Tools": [
+    "CircleCI", "Jenkins", "GitLab", "GitHub Actions", 
+    "Pipeline as Code", "LaunchDarkly", "Blue/Green & Canary Deployments",
+    "Backstage"
+  ],
+  "Monitoring & Observability": [
+    "New Relic", "Sumo Logic", "DataDog", "Sentry", "Status Page",
+    "Splunk", "Developer Metrics", "Productivity Analytics", "DORA Metrics"
+  ]
+};
+---
+
+<section id="skills" class="py-20 px-4 bg-slate-800/50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">
+      Technical <span class="text-emerald-500">Skills</span>
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {Object.entries(technicalSkills).map(([category, skills]) => (
+        <div class="bg-slate-900 p-6 rounded-lg border border-slate-700">
+          <h3 class="text-xl font-bold mb-4 text-indigo-400">
+            {category}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <span class="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-sm hover:border-emerald-500 transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
