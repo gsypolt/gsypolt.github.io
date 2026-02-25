@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Contact from '../../components/Contact.astro';
+
+const environments = [
+  {
+    title: "Start-up",
+    description: "Scaling initial infrastructure and defining minimum viable process.",
+    color: "emerald",
+  },
+  {
+    title: "Enterprise",
+    description: "Navigating complex political structures and securing multi-million-dollar budgets for large-scale migrations.",
+    color: "indigo",
+  },
+  {
+    title: "Regulated",
+    description: "Ensuring compliance and strict governance (e.g., in Fin-Tech, Telecom).",
+    color: "amber",
+  },
+];
+
+const industries = [
+  { name: "Ed-Tech", description: "Scalable learning platforms and content delivery systems." },
+  { name: "Fin-Tech", description: "Security-critical environments with strict compliance requirements." },
+  { name: "Telecom", description: "High-throughput systems requiring robust infrastructure." },
+  { name: "Digital Media", description: "Content-delivery focused with high-volume testing needs." },
+];
+---
+
+<Layout title="Leadership Breadth | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">Leadership Breadth</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Leadership <span class="text-cyan-500">Breadth</span>
+          </h1>
+          <div class="bg-slate-800/50 p-6 rounded-lg border border-cyan-500/30 mb-8">
+            <p class="text-sm text-cyan-500 uppercase tracking-wider mb-2 font-medium">Core Principle</p>
+            <p class="text-slate-300 leading-relaxed text-lg">Adaptability and demonstrated success in driving technical change across diverse industry and company landscapes.</p>
+          </div>
+        </div>
+
+        <!-- Complex Environments -->
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">Experience Across Complex Environments</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            {environments.map((env) => (
+              <div class={`bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-${env.color}-500 transition-all duration-300`}>
+                <h3 class={`text-lg font-bold mb-3 text-${env.color}-400`}>{env.title}</h3>
+                <p class="text-slate-400 leading-relaxed">{env.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Industry Expertise -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">Industry Expertise</h2>
+          <p class="text-slate-400 mb-8 leading-relaxed">Proven ability to tailor DevEx and QE strategies to meet specific business models.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            {industries.map((industry) => (
+              <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500 transition-all duration-300">
+                <h3 class="text-lg font-bold mb-2 text-cyan-400">{industry.name}</h3>
+                <p class="text-slate-400 leading-relaxed">{industry.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Leadership
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>

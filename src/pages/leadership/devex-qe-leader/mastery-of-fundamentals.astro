@@ -1,0 +1,82 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Contact from '../../../components/Contact.astro';
+
+const capabilities = [
+  {
+    title: "CI/CD Tooling",
+    description: "Deep hands-on experience across major platforms, including GitLab, Jenkins, GitHub Actions, and CircleCI.",
+  },
+  {
+    title: "Testing Infrastructure",
+    description: "Experience managing high-volume, mission-critical quality systems, evidenced by scaling 14M+ monthly tests at Gannett with a failure rate maintained at <3%.",
+  },
+  {
+    title: "Platform Migrations",
+    description: "Successful execution of complex infrastructural transitions, such as self-managed Jenkins to GitLab SaaS and on-prem Atlassian to Cloud.",
+  },
+  {
+    title: "Security Integration",
+    description: "Expertise in embedding critical security tooling (SonarQube, BlackDuck, Checkmarx) directly into the CI/CD pipeline (Shift-Left Security).",
+  },
+  {
+    title: "Artifact Management",
+    description: "Proficiency in enterprise-level artifact storage and management systems (JFrog Artifactory).",
+  },
+  {
+    title: "Container Orchestration",
+    description: "Expertise in containerization (Docker) and orchestration (Kubernetes, Terraform) to ensure scalable, reproducible environments.",
+  },
+];
+---
+
+<Layout title="Mastery of the Fundamentals | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <a href="/leadership/devex-qe-leader" class="hover:text-emerald-500 transition-colors">DevEx & QE</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">Mastery of the Fundamentals</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Mastery of the <span class="text-emerald-500">Fundamentals</span>
+          </h1>
+          <div class="bg-slate-800/50 p-6 rounded-lg border border-emerald-500/30 mb-8">
+            <p class="text-sm text-emerald-500 uppercase tracking-wider mb-2 font-medium">Core Principle</p>
+            <p class="text-slate-300 leading-relaxed text-lg">A leader must understand the technical ground truth to effectively set strategy and coach teams.</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">Deep Technical Experience</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {capabilities.map((cap) => (
+            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-emerald-500 transition-all duration-300">
+              <h3 class="text-lg font-bold mb-3 text-emerald-400">{cap.title}</h3>
+              <p class="text-slate-400 leading-relaxed">{cap.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership/devex-qe-leader" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to DevEx & QE Leader
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>

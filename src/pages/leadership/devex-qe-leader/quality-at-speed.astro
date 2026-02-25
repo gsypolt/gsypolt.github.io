@@ -1,0 +1,210 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Contact from '../../../components/Contact.astro';
+---
+
+<Layout title="Quality at Speed | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <a href="/leadership/devex-qe-leader" class="hover:text-emerald-500 transition-colors">DevEx & QE</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">Quality at Speed</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Quality at <span class="text-rose-500">Speed</span>
+          </h1>
+          <p class="text-lg text-slate-400 max-w-4xl leading-relaxed">
+            My leadership style focuses on achieving Quality at Speed through a dual-engine framework, balancing innovation and stability. By architecting the path to production with both elements in mind, I ensure continuous forward movement while maintaining high standards.
+          </p>
+        </div>
+
+        <!-- Dual Engine Framework -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <!-- DevEx - The Accelerator -->
+          <div class="bg-slate-800/50 p-8 rounded-lg border border-emerald-500/30">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-2xl font-bold text-emerald-500">1</span>
+              <h2 class="text-xl font-bold">Developer Experience (DevEx)</h2>
+            </div>
+            <p class="text-emerald-500 font-medium mb-4">The Accelerator: Removing Friction</p>
+            <div class="mb-6">
+              <p class="text-xs text-slate-500 uppercase tracking-wider mb-2 font-medium">Core Principle</p>
+              <p class="text-slate-300 leading-relaxed">Treating the internal development platform as a Product, where the primary goal is to minimize cognitive load and maximize "Flow State."</p>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 uppercase tracking-wider mb-3 font-medium">Key Leadership Responsibilities</p>
+              <ul class="space-y-4">
+                <li>
+                  <h4 class="text-emerald-400 font-semibold mb-1">Platform Product Strategy</h4>
+                  <p class="text-slate-400 text-sm leading-relaxed">Managing the internal platform (IDP) with a product mindset&mdash;conducting user research with engineers, managing a roadmap based on friction points, and measuring adoption (NPS/CSAT).</p>
+                </li>
+                <li>
+                  <h4 class="text-emerald-400 font-semibold mb-1">"Golden Path" Engineering</h4>
+                  <p class="text-slate-400 text-sm leading-relaxed">Architecting and maintaining paved roads (standardized templates and scaffolding) that abstract away complexity. These paths come with security, logging, and CI/CD pre-configured.</p>
+                </li>
+                <li>
+                  <h4 class="text-emerald-400 font-semibold mb-1">Inner Loop Optimization</h4>
+                  <p class="text-slate-400 text-sm leading-relaxed">Obsessing over the speed of the local development cycle (coding &rarr; building &rarr; local testing). Ensuring environments are ephemeral, fast, and mirror production.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- QE - The Guardrails -->
+          <div class="bg-slate-800/50 p-8 rounded-lg border border-rose-500/30">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-2xl font-bold text-rose-500">2</span>
+              <h2 class="text-xl font-bold">Quality Engineering (QE)</h2>
+            </div>
+            <p class="text-rose-500 font-medium mb-4">The Guardrails: Automated Safety</p>
+            <div class="mb-6">
+              <p class="text-xs text-slate-500 uppercase tracking-wider mb-2 font-medium">Core Principle</p>
+              <p class="text-slate-300 leading-relaxed">Redefining Quality Engineering from a retrospective gatekeeping function to a proactive enabler of speed. Shifting quality ownership fully to development teams by baking standards directly into the platform.</p>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 uppercase tracking-wider mb-3 font-medium">Key Leadership Responsibilities</p>
+              <ul class="space-y-4">
+                <li>
+                  <h4 class="text-rose-400 font-semibold mb-1">Shift-Left Quality Strategy</h4>
+                  <p class="text-slate-400 text-sm leading-relaxed">Owning the architecture of testing frameworks that empower developers to validate code instantly. This includes unit, integration, and contract testing tools that run locally and via pre-commit hooks.</p>
+                </li>
+                <li>
+                  <h4 class="text-rose-400 font-semibold mb-1">Automated Quality Gates</h4>
+                  <p class="text-slate-400 text-sm leading-relaxed">Designing rigorous pipeline governance (Policy-as-Code) where deployment criteria&mdash;such as test coverage thresholds, performance baselines, and security scans&mdash;are enforced programmatically.</p>
+                </li>
+                <li>
+                  <h4 class="text-rose-400 font-semibold mb-1">Observability & Reliability</h4>
+                  <p class="text-slate-400 text-sm leading-relaxed">Shifting from "monitoring uptime" to "managing reliability" by establishing Service Level Objectives (SLOs), error budgets, and integrating synthetic monitoring with automated rollback capabilities.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Synthesis -->
+        <div class="bg-gradient-to-r from-emerald-900/20 to-rose-900/20 p-8 rounded-lg border border-slate-700 mb-16">
+          <h2 class="text-2xl font-bold mb-4">The Synthesis: How They Work Together</h2>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-500 font-bold">DevEx</span>
+              <span class="text-slate-300">builds the car (The Platform) and the highway (The Pipeline).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-rose-500 font-bold">QE</span>
+              <span class="text-slate-300">builds the brakes, lane assist, and collision detection (The Automated Gates).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-500 font-bold">Result</span>
+              <span class="text-slate-300">You can drive at 100mph (Velocity) because you trust the safety systems (Confidence).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 3-Pillar Framework -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">3-Pillar Quality at Speed Framework</h2>
+
+          <div class="space-y-8">
+            <!-- Engineering Lens -->
+            <div class="bg-slate-800/50 rounded-lg border border-slate-700 overflow-hidden">
+              <div class="border-l-4 border-emerald-500 p-8">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4">
+                  <h3 class="text-xl font-bold">Engineering Lens</h3>
+                  <span class="text-emerald-500 text-sm font-medium bg-emerald-500/10 px-3 py-1 rounded-full w-fit">The "Health" Metrics</span>
+                </div>
+                <p class="text-slate-400 mb-2">This lens focuses on the technical "heartbeat" of the organization. It is essential because it moves the team from slow "Release Trains" to "On-Demand" deployments.</p>
+                <p class="text-slate-300 leading-relaxed mb-6"></p>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-emerald-400 font-semibold mb-2">Deployment Frequency</h4>
+                    <p class="text-slate-400 text-sm">Move from "Release Trains" to "On-Demand" deployments via GitOps workflows.</p>
+                  </div>
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-emerald-400 font-semibold mb-2">Lead Time for Changes</h4>
+                    <p class="text-slate-400 text-sm">Attack the "Wait Time" by replacing manual CAB meetings with Automated Change Governance.</p>
+                  </div>
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-emerald-400 font-semibold mb-2">Change Failure Rate</h4>
+                    <p class="text-slate-400 text-sm">Shift quality left with Ephemeral Environments for every Pull Request.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Lens -->
+            <div class="bg-slate-800/50 rounded-lg border border-slate-700 overflow-hidden">
+              <div class="border-l-4 border-indigo-500 p-8">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4">
+                  <h3 class="text-xl font-bold">Product Lens</h3>
+                  <span class="text-indigo-500 text-sm font-medium bg-indigo-500/10 px-3 py-1 rounded-full w-fit">The "Value" Metrics</span>
+                </div>
+                <p class="text-slate-400 mb-2">My leadership style, the internal development platform is treated as a Product. This lens is vital because technical tools are useless if engineers find them difficult to use.</p>
+                <p class="text-slate-300 leading-relaxed mb-6"></p>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-indigo-400 font-semibold mb-2">Platform CSAT / NPS</h4>
+                    <p class="text-slate-400 text-sm">Implement "Perceived Productivity" surveys to measure sentiment, not just tickets.</p>
+                  </div>
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-indigo-400 font-semibold mb-2">Golden Path Adoption</h4>
+                    <p class="text-slate-400 text-sm">Track standardized template usage vs. custom "snowflake" setups. Create Composable Golden Paths.</p>
+                  </div>
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-indigo-400 font-semibold mb-2">Service Risk Scorecard</h4>
+                    <p class="text-slate-400 text-sm">Gamified "Service Health Dashboard" driving proactive behavior without top-down mandates.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cultural Lens -->
+            <div class="bg-slate-800/50 rounded-lg border border-slate-700 overflow-hidden">
+              <div class="border-l-4 border-amber-500 p-8">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4">
+                  <h3 class="text-xl font-bold">Cultural Lens</h3>
+                  <span class="text-amber-500 text-sm font-medium bg-amber-500/10 px-3 py-1 rounded-full w-fit">The "Mindset" Metrics</span>
+                </div>
+                <p class="text-slate-400 mb-2">This lens addresses the human element of software delivery. Technical excellence cannot exist in a vacuum; it requires a mindset of continuous learning and safety.</p>
+                <p class="text-slate-300 leading-relaxed mb-6"></p>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-amber-400 font-semibold mb-2">Cognitive Load Reduction</h4>
+                    <p class="text-slate-400 text-sm">Abstract away complexity by building abstraction layers where developers simply say "Deploy Service X."</p>
+                  </div>
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-amber-400 font-semibold mb-2">Psychological Safety</h4>
+                    <p class="text-slate-400 text-sm">Institutionalize Blameless Post-Mortems and measure action item completion rates.</p>
+                  </div>
+                  <div class="bg-slate-900/50 p-4 rounded-lg">
+                    <h4 class="text-amber-400 font-semibold mb-2">InnerSource & Community</h4>
+                    <p class="text-slate-400 text-sm">Move to a community contribution model measuring "External Contributions to Platform Repo."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership/devex-qe-leader" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to DevEx & QE Leadership
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>

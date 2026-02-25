@@ -1,0 +1,270 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Contact from '../../../components/Contact.astro';
+
+const adkar = [
+  { letter: "A", word: "Awareness", description: "Understanding the need for change." },
+  { letter: "D", word: "Desire", description: "The motivation to support and participate in the change." },
+  { letter: "K", word: "Knowledge", description: "Knowing how to change." },
+  { letter: "A", word: "Ability", description: "The capability to implement the new skills and behaviors." },
+  { letter: "R", word: "Reinforcement", description: "Sustaining the change through recognition and rewards." },
+];
+
+const phases = [
+  {
+    number: "1",
+    title: "Planning and Strategy",
+    subtitle: "The 'Why' and 'What'",
+    goal: "Establish the scope, sponsorship, and impact of the change.",
+    color: "emerald",
+    sections: [
+      {
+        heading: "Define the Change and Its Scope",
+        items: [
+          "Clearly articulate the new product/feature being rolled out.",
+          "Identify the impacted groups (e.g., End-Users, Internal Dev Teams, External Partner Devs).",
+          "Define the specific goals of the change (e.g., increase adoption by 30%, reduce integration time by 50%).",
+        ],
+      },
+      {
+        heading: "Secure Sponsorship and DevX Champion",
+        items: [
+          "Identify and secure commitment from a senior leader (Sponsor) who authorizes and legitimizes the change.",
+          "Designate a dedicated DevX Change Champion (often a DevRel or Product Manager) to drive the framework execution.",
+        ],
+      },
+      {
+        heading: "Stakeholder Analysis and Impact Assessment",
+        items: [
+          "Map all stakeholders (End-Users, Engineering Teams, Support, Marketing).",
+          "Conduct a Delta Analysis: Document the \"As-Is\" state (how they work now) vs. the \"To-Be\" state (how they will work with the new product). This highlights the degree of change.",
+        ],
+      },
+    ],
+  },
+  {
+    number: "2",
+    title: "Building Awareness and Desire",
+    subtitle: "The 'Motivation'",
+    goal: "Communicate the value proposition of the new product to all target audiences.",
+    color: "indigo",
+    sections: [
+      {
+        heading: "Value-Driven Communication Plan",
+        items: [
+          "For End-Users: Focus on product benefits (e.g., new capabilities, increased efficiency, better UX).",
+          "For Developers/DevX Audience: Focus on the developer experience benefits (e.g., faster build times, simpler APIs, better tooling, improved documentation, reduced cognitive load).",
+          "Messaging: Create clear, concise messaging that addresses \"What's in it for me?\" (WIIFM).",
+        ],
+      },
+      {
+        heading: "DevX Feedback Loops (Early Adoption)",
+        items: [
+          "Establish a Technical Steering Group or Alpha/Beta program with key internal and external developers.",
+          "Use their feedback to refine the product and the DevX documentation/onboarding process before general release. This builds early Desire and identifies technical friction.",
+        ],
+      },
+      {
+        heading: "Visual Communication",
+        items: [
+          "Create Release Notes, Migration Guides, and Walk-through Videos targeting the technical audience.",
+        ],
+      },
+    ],
+  },
+  {
+    number: "3",
+    title: "Knowledge and Training",
+    subtitle: "The 'How'",
+    goal: "Ensure all impacted groups have the necessary skills and resources to succeed with the new product.",
+    color: "amber",
+    sections: [
+      {
+        heading: "Tailored Training Strategy",
+        items: [
+          "For End-Users: Provide standard training materials (webinars, FAQs, user guides).",
+          "For Developers: Hands-on Workshops/Coding Sessions focusing on new API calls, integration patterns, and migration steps.",
+          "Sandboxes/Playgrounds: Provide isolated environments for developers to experiment safely.",
+          "Detailed, searchable Dev Docs: Ensure documentation is up-to-date and covers all breaking changes or new paradigms.",
+        ],
+      },
+      {
+        heading: "DevX Support Model",
+        items: [
+          "Define clear channels for technical support during the rollout (e.g., dedicated Slack channel, office hours with the DevX team, GitHub Issues).",
+          "Ensure the support team is trained on the new product's common pain points and technical nuances.",
+        ],
+      },
+    ],
+  },
+  {
+    number: "4",
+    title: "Implementation and Reinforcement",
+    subtitle: "The 'Action' and 'Sustain'",
+    goal: "Execute the rollout, manage resistance, and measure adoption.",
+    color: "rose",
+    sections: [
+      {
+        heading: "Rollout Strategy",
+        items: [
+          "Implement a Phased Rollout (Wave Approach): Start with a small, low-risk group before moving to broader end-users/developers. This allows for rapid iteration.",
+          "Technical De-risking: Maintain support for the Legacy System for a defined period to allow for smooth migration (The \"Retirement Plan\").",
+        ],
+      },
+      {
+        heading: "Resistance Management",
+        items: [
+          "Proactively address developer resistance: Technical debt and perceived rework are common concerns. Use the WIIFM from Phase 2.",
+          "Provide 1:1 Coaching: Offer dedicated time for developers struggling with migration.",
+        ],
+      },
+      {
+        heading: "Measure and Track Adoption",
+        items: [
+          "End-User KPIs: Usage rate, feature utilization, support tickets logged.",
+          "Developer/DevX KPIs: SDK downloads, API call volume, average time-to-first-API-call, migration rate from the old system.",
+        ],
+      },
+      {
+        heading: "Celebrate Quick Wins",
+        items: [
+          "Publicly recognize development teams that successfully migrate or leverage the new product/feature effectively.",
+        ],
+      },
+    ],
+  },
+  {
+    number: "5",
+    title: "Review and Continuous Improvement",
+    subtitle: "The 'Iterate'",
+    goal: "Ensure the change sticks and informs future product rollouts.",
+    color: "violet",
+    sections: [
+      {
+        heading: "Post-Implementation Review",
+        items: [
+          "Collect structured feedback from all key stakeholders (surveys, post-mortem meetings).",
+          "Analyze the adoption KPIs (from 4.3). Did you hit your targets?",
+        ],
+      },
+      {
+        heading: "Transition to Business-as-Usual (BAU)",
+        items: [
+          "Transfer ownership of ongoing support and maintenance from the Change Management team to the standard support and product teams.",
+          "Formally sunset the legacy product/tooling.",
+        ],
+      },
+      {
+        heading: "Document the DevX Change Model",
+        items: [
+          "Capture lessons learned about what worked (and what didn't) with your technical and end-user audiences. This creates a reusable \"Playbook\" for your next product launch.",
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Change Management Framework | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <a href="/leadership/devex-qe-leader" class="hover:text-emerald-500 transition-colors">DevEx & QE</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">Change Management Framework</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Change Management <span class="text-cyan-500">Framework</span>
+          </h1>
+          <p class="text-lg text-slate-400 max-w-4xl leading-relaxed mb-8">
+            This framework is built on the foundational ADKAR model and is specifically adapted to address the technical and behavioral aspects relevant to a developer experience (DevX) team.
+          </p>
+        </div>
+
+        <!-- ADKAR Model -->
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Built on the ADKAR Model</h2>
+          <p class="text-slate-400 mb-8 leading-relaxed">A model for change in business, government, and our community. It provides a structure to integrate various change management activities like communication, coaching, and training, making change more understandable and manageable in any setting.</p>
+          <div class="flex flex-wrap gap-4">
+            {adkar.map((item) => (
+              <div class="bg-slate-800/50 px-5 py-4 rounded-lg border border-slate-700 flex items-center gap-3 flex-1 min-w-[200px]">
+                <span class="text-2xl font-bold text-cyan-500">{item.letter}</span>
+                <div>
+                  <p class="font-semibold text-slate-200">{item.word}</p>
+                  <p class="text-slate-400 text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- 5 Phases -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">DevX Change Management Framework (The 5 Phases)</h2>
+          <div class="space-y-8">
+            {phases.map((phase) => (
+              <div class="bg-slate-800/50 rounded-lg border border-slate-700 overflow-hidden">
+                <div class={`border-l-4 border-${phase.color}-500 p-8`}>
+                  <!-- Phase Header -->
+                  <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                    <div class="flex items-center gap-3">
+                      <span class={`text-3xl font-bold text-${phase.color}-500`}>{phase.number}</span>
+                      <h3 class="text-xl font-bold">{phase.title}</h3>
+                    </div>
+                    <span class={`text-${phase.color}-500 text-sm font-medium bg-${phase.color}-500/10 px-3 py-1 rounded-full w-fit`}>{phase.subtitle}</span>
+                  </div>
+                  <p class="text-slate-400 mb-6 italic">{phase.goal}</p>
+
+                  <!-- Phase Sections -->
+                  <div class="space-y-6">
+                    {phase.sections.map((section) => (
+                      <div>
+                        <h4 class={`text-${phase.color}-400 font-semibold mb-3`}>{section.heading}</h4>
+                        <ul class="space-y-2">
+                          {section.items.map((item) => (
+                            <li class="flex items-start gap-3">
+                              <svg class={`w-5 h-5 text-${phase.color}-500 mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                              </svg>
+                              <span class="text-slate-300 leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-r from-cyan-900/20 to-violet-900/20 p-8 rounded-lg border border-slate-700">
+          <p class="text-slate-300 leading-relaxed">
+            This framework ensures you address the unique needs of a DevX team by focusing on <span class="text-cyan-500 font-semibold">technical enablement</span> and <span class="text-cyan-500 font-semibold">API value</span> while managing the human side of change for your end users.
+          </p>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership/devex-qe-leader" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to DevEx & QE Leader
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>

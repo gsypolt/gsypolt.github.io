@@ -1,0 +1,106 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Contact from '../../../components/Contact.astro';
+
+const pillars = [
+  {
+    number: "1",
+    title: "Mastery of the Fundamentals",
+    description: "Deep, hands-on expertise in the modern CI/CD, testing, and security toolchain.",
+    href: "/leadership/devex-qe-leader/mastery-of-fundamentals",
+    color: "emerald",
+  },
+  {
+    number: "2",
+    title: "AI-First Leadership",
+    description: "Strategic leadership in adopting Generative AI for engineering velocity, governance, and organizational skill transformation.",
+    href: "/leadership/devex-qe-leader/ai-first-leadership",
+    color: "indigo",
+  },
+  {
+    number: "3",
+    title: "Platform as a Product",
+    description: "Building and scaling Developer Experience platforms using a product management mindset to reduce cognitive load and maximize flow.",
+    href: "/leadership/devex-qe-leader/platform-as-a-product",
+    color: "amber",
+  },
+  {
+    number: "4",
+    title: "Quality at Speed",
+    description: "Achieving Quality at Speed through a dual-engine framework that balances innovation and stability.",
+    href: "/leadership/devex-qe-leader/quality-at-speed",
+    color: "rose",
+  },
+  {
+    number: "5",
+    title: "Change Management Framework",
+    description: "A 5-phase framework built on the ADKAR model, adapted for the technical and behavioral aspects of DevX teams.",
+    href: "/leadership/devex-qe-leader/change-management-framework",
+    color: "cyan",
+  },
+  {
+    number: "6",
+    title: "Strategic Leadership",
+    description: "Proven track record in securing executive buy-in, managing large-scale budgets, and driving multi-year technical transformations.",
+    href: "/leadership/devex-qe-leader/strategic-leadership",
+    color: "violet",
+  },
+];
+---
+
+<Layout title="DevEx & QE Leader | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">DevEx & QE Leader</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Developer Experience & Quality Engineering <span class="text-amber-500">Leadership</span>
+          </h1>
+          <p class="text-lg text-slate-400 max-w-4xl leading-relaxed">
+            This portfolio outlines core competencies and proven experience across two critical leadership domains: <span class="text-emerald-500 font-semibold">Developer Experience (DevEx) Leadership</span> and <span class="text-indigo-500 font-semibold">Quality Engineering (QE) Leadership</span>. It describes a leader who drives technical transformation by focusing on developer productivity, platform reliability, and the strategic integration of AI-first practices.
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">Core Leadership Pillars</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pillars.map((pillar) => (
+            <a href={pillar.href} class={`group block bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-${pillar.color}-500 transition-all duration-300 hover:scale-105`}>
+              <div class="flex items-center gap-3 mb-4">
+                <span class={`text-2xl font-bold text-${pillar.color}-500`}>{pillar.number}</span>
+                <h3 class="text-lg font-bold group-hover:text-emerald-500 transition-colors">{pillar.title}</h3>
+              </div>
+              <p class="text-slate-400 leading-relaxed text-sm mb-4">{pillar.description}</p>
+              <span class={`text-${pillar.color}-500 font-medium text-sm inline-flex items-center gap-2`}>
+                Learn more
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Leadership
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>

@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Contact from '../../components/Contact.astro';
+
+const levels = [
+  {
+    number: "1",
+    title: "Strategic Thinking",
+    subtitle: "The North Star",
+    color: "emerald",
+    items: [
+      "Vision setting and north star definition",
+      "Securing executive buy-in ($10M+ in funding)",
+      "Building business cases and ROI frameworks",
+      "Long-term organizational transformation",
+      "Maturity assessment, transformations, defining vision, culture shifter, budget planning, vendor management, forward thinking",
+    ],
+  },
+  {
+    number: "2",
+    title: "Technical Depth",
+    subtitle: "The Hands-On Credibility",
+    color: "indigo",
+    items: [
+      "Team structure and organizational design (3-pillar framework)",
+      "Process implementation and playbook creation",
+      "Change management and adoption strategies",
+      "Platform selection and vendor management",
+      "Hands-on, have written code, and understand current and future development tools",
+      "Hands-on technical depth (automation frameworks, CI/CD pipelines)",
+    ],
+  },
+  {
+    number: "3",
+    title: "People Leader",
+    subtitle: "The Force Multiplier",
+    color: "rose",
+    items: [
+      "Engineering career competency matrix", 
+      "Building teams from ground zero and up", 
+      "Mentoring future leaders and coaching on career development",
+      "Fostering a culture of continuous learning and improvement",
+      "Building high-performing teams, mentoring, coaching, career development, culture building",
+    ],
+  },
+];
+
+---
+
+<Layout title="Full Stack Leader | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">Full Stack Leader</span>
+        </nav>
+
+        <div class="mb-16">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Full Stack <span class="text-emerald-500">Leader</span>
+          </h1>
+          <p class="text-lg text-slate-400 leading-relaxed">
+            As a <span class="text-emerald-500 font-semibold">Full-Stack</span> Engineering Leader, I drive organizational transformation by bridging technical depth, strategic vision, and a people-first culture. Specializing in DevX and Quality Engineering, I lead side-by-side with my teams to elevate DORA metrics, clear bottlenecks, and translate complex business goals into high-velocity, secure software delivery.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            The Three Pillars of Full Stack Leadership
+          </h2>
+          <p class="text-slate-400 leading-relaxed">
+            My leadership philosophy is built on three core pillars that together create a holistic approach to driving technical and organizational excellence.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {levels.map((level) => (
+            <div
+              class={`bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-${level.color}-500 transition-all duration-300`}
+            >
+              <div class="flex items-center gap-4 mb-2">
+                <span class={`text-3xl font-bold text-${level.color}-500`}>{level.number}</span>
+                <h3 class="text-xl font-bold">{level.title}</h3>
+              </div>
+              <p class={`text-sm text-${level.color}-400 mb-6 ml-12`}>{level.subtitle}</p>
+              <ul class="space-y-3">
+                {level.items.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <svg class={`w-5 h-5 text-${level.color}-500 mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-slate-300 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Leadership
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>
