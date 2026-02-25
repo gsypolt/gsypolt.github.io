@@ -1,0 +1,131 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Contact from '../../components/Contact.astro';
+
+const dnaTraits = [
+  {
+    title: "Visionary Pragmatist",
+    description: "Sees the future state clearly while understanding the current technical debt and political landscape.",
+    icon: "eye",
+  },
+  {
+    title: "Empathy-First",
+    description: "Understands that technical change can feel like a \"threat\" to engineers and manages organizational anxiety.",
+    icon: "heart",
+  },
+  {
+    title: "Political Navigator",
+    description: "Secures budget ($10M+) and buy-in from executives while gaining ground-level trust from junior developers.",
+    icon: "compass",
+  },
+];
+
+const phases = [
+  {
+    phase: "The Start (Catalyst)",
+    role: "Diagnostician & Evangelist",
+    narrative: "Used data (DORA metrics, budget bleed) to prove the state was unsustainable. Translated technical pain into business risk (time-to-market).",
+    script: "I identified that our fragmented toolchain was creating cognitive load and slowing delivery. I built a data-driven business case to secure executive sponsorship, framing the transformation not as a 'tech upgrade,' but as a strategic necessity for operational resilience.",
+    color: "emerald",
+  },
+  {
+    phase: "During (Crucible)",
+    role: "Blocker-Remover & Coach",
+    narrative: "Navigated the 'Messy Middle' through iterative execution (pilot programs). Created cultural psychological safety. Visible leadership in the trenches.",
+    script: "During the migration, we encountered significant resistance regarding workflow changes. I countered this by establishing a 'focus group' of influential engineers to co-design the solution, ensuring the team felt like architects of the change rather than victims of it.",
+    color: "indigo",
+  },
+  {
+    phase: "Continue (Evolution)",
+    role: "Stabilizer & Optimizer",
+    narrative: "Institutionalized the change (\"Product Mode\"). Measured value against the original business case (ROI). Set up governance (golden paths) for future-proofing.",
+    script: "Post-implementation, we established a Center of Excellence to maintain the new standards. We now continuously measure our 'DevEx' score, ensuring that the transformation evolves with new technologies rather than becoming the next legacy swamp.",
+    color: "amber",
+  },
+];
+---
+
+<Layout title="Transformation Leader | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">Transformation Leader</span>
+        </nav>
+
+        <div class="mb-16">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Transformation <span class="text-indigo-500">Leader</span>
+          </h1>
+        </div>
+
+        <!-- Core DNA -->
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">My Core DNA of a Transformation Leader</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            {dnaTraits.map((trait) => (
+              <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4">
+                  {trait.icon === "eye" && (
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  )}
+                  {trait.icon === "heart" && (
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  )}
+                  {trait.icon === "compass" && (
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                  )}
+                </div>
+                <h3 class="text-lg font-bold mb-2 text-indigo-400">{trait.title}</h3>
+                <p class="text-slate-400 leading-relaxed">{trait.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Transformation Phases -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">Transformation Phases</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {phases.map((phase) => (
+              <div class={`bg-slate-800/50 rounded-lg border border-slate-700 hover:border-${phase.color}-500 transition-all duration-300 overflow-hidden flex flex-col`}>
+                <div class={`border-t-4 border-${phase.color}-500 p-8 flex flex-col flex-1`}>
+                  <h3 class="text-xl font-bold mb-2">{phase.phase}</h3>
+                  <span class={`text-${phase.color}-500 font-medium text-sm bg-${phase.color}-500/10 px-3 py-1 rounded-full inline-block mb-4`}>{phase.role}</span>
+                  <p class="text-slate-300 leading-relaxed mb-6 flex-1">{phase.narrative}</p>
+                  <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-700">
+                    <p class="text-sm text-slate-500 uppercase tracking-wider mb-2 font-medium">Leadership Narrative</p>
+                    <p class="text-slate-300 leading-relaxed italic">"{phase.script}"</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Leadership
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>

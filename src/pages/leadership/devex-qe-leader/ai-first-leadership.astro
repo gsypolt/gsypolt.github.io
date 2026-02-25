@@ -1,0 +1,169 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Contact from '../../../components/Contact.astro';
+
+const strategyItems = [
+  {
+    title: "AI Tool Evaluation & Strategy",
+    description: "Led the evaluation and selection of AI-assisted engineering tools.",
+  },
+  {
+    title: "AI Governance Framework",
+    description: "Designed a strategic AI governance framework, featuring a 6-phase model, ensuring safe and compliant AI adoption throughout the Software Development Lifecycle (SDLC).",
+  },
+  {
+    title: "Hands-on AI Integration",
+    description: "Direct experience with AI-assistant code generation in production environments and personally, including security scanning, prototyping, and spec planning.",
+  },
+  {
+    title: "Regulated Environment Acumen",
+    description: "Clear understanding of the architectural and compliance considerations required to implement AI in regulated environments.",
+  },
+];
+
+const governanceItems = [
+  {
+    title: "GenAI Governance Framework",
+    description: "Designed specifically for enterprise scale, moving beyond simple deployment to a 5-stage lifecycle (Value, Feasibility, Development, Deployment, Monitoring) that ensures value delivery, not just feature shipping.",
+  },
+  {
+    title: "Program Structure & Governance",
+    description: "Establishing a documentation hub and comprehensive governance framework.",
+  },
+  {
+    title: "Use Case Pipeline Management",
+    description: "Tracking use cases across the 5 defined stages (Value, Feasibility, Development, Execution, Production).",
+  },
+  {
+    title: "GenAI Development Lifecycle",
+    description: "Detailed breakdown of the five-stage lifecycle: Value, Feasibility, Development, Deployment, Monitoring & Maintenance.",
+  },
+  {
+    title: "Technical Guidance",
+    description: "Providing comparison tables to highlight the differences between GenAI and traditional software engineering paradigms.",
+  },
+  {
+    title: "Model Review Processes",
+    description: "Implementing structured Model Peer Review and multi-tiered Production Review gates.",
+  },
+  {
+    title: "Quality Assurance & Monitoring",
+    description: "Defining and implementing advanced testing approaches, including automated testing, human-in-the-loop validation, and LLM-as-Judge techniques.",
+  },
+];
+
+const futureImpact = [
+  {
+    area: "The Daily Reality",
+    shift: "Engineers shift from \"coders\" to \"conductors,\" focusing on reviewing AI implementations, validating architecture, and catching edge cases.",
+    implication: "Leaders must coach on critical review and systems integration over raw coding output.",
+  },
+  {
+    area: "The Core Skill Shift",
+    shift: "The differentiator is judgment\u2014understanding why a solution fits the system architecture and business context.",
+    implication: "Hiring profiles must prioritize problem-solving, communication, and architectural thinking.",
+  },
+  {
+    area: "Organizational Impact",
+    shift: "Teams become smaller but own larger vertical slices. Engineers evolve into \"AI Trainers\" who build guardrails.",
+    implication: "Leaders must focus on preventing the accumulation of \"AI-generated technical debt\" that outpaces human understanding.",
+  },
+  {
+    area: "New Hiring Profiles",
+    shift: "Focus moves to whether candidates can think in systems, communicate clearly, and make good judgment calls.",
+    implication: "Recruitment strategy needs to adapt to assess cognitive ability over rote technical knowledge.",
+  },
+];
+---
+
+<Layout title="AI-First Leadership | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <a href="/leadership/devex-qe-leader" class="hover:text-emerald-500 transition-colors">DevEx & QE</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">AI-First Leadership</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            AI-First Mindset, Ecosystem, and <span class="text-indigo-500">Architecture</span>
+          </h1>
+          <div class="bg-slate-800/50 p-6 rounded-lg border border-indigo-500/30 mb-8">
+            <p class="text-sm text-indigo-500 uppercase tracking-wider mb-2 font-medium">Core Principle</p>
+            <p class="text-slate-300 leading-relaxed text-lg">Strategically integrate AI to fundamentally change how engineering teams build, test, and ship software, prioritizing governance and quality.</p>
+          </div>
+        </div>
+
+        <!-- Strategy & Adoption -->
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">AI Strategy and Hands-on Adoption</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            {strategyItems.map((item) => (
+              <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300">
+                <h3 class="text-lg font-bold mb-3 text-indigo-400">{item.title}</h3>
+                <p class="text-slate-400 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Governance -->
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Architecting the AI-First Ecosystem</h2>
+          <p class="text-slate-400 mb-8 leading-relaxed">Governance & Quality-First Approach: Building rigorous structures that enable speed without introducing unmanaged risk.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            {governanceItems.map((item) => (
+              <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                <h3 class="text-lg font-bold mb-3 text-indigo-400">{item.title}</h3>
+                <p class="text-slate-400 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Future of AI-Native Engineer -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">The Future of the AI-Native Engineer</h2>
+          <p class="text-slate-400 mb-8 leading-relaxed">The evolution of the engineering role focuses less on syntax and more on systems thinking and judgment.</p>
+          <div class="space-y-6">
+            {futureImpact.map((item) => (
+              <div class="bg-slate-800/50 rounded-lg border border-slate-700 overflow-hidden">
+                <div class="border-l-4 border-indigo-500 p-6">
+                  <h3 class="text-lg font-bold mb-4 text-indigo-400">{item.area}</h3>
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <p class="text-xs text-slate-500 uppercase tracking-wider mb-2 font-medium">Shift in Role/Skill</p>
+                      <p class="text-slate-300 leading-relaxed">{item.shift}</p>
+                    </div>
+                    <div>
+                      <p class="text-xs text-slate-500 uppercase tracking-wider mb-2 font-medium">Leadership Implication</p>
+                      <p class="text-slate-300 leading-relaxed">{item.implication}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership/devex-qe-leader" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to DevEx & QE Leader
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>

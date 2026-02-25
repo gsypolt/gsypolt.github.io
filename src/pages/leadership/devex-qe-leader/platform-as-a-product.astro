@@ -1,0 +1,312 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Contact from '../../../components/Contact.astro';
+
+const orgCapabilities = [
+  {
+    title: "Organizational Scaling",
+    description: "Built a DevEx organization from the ground up.",
+  },
+  {
+    title: "Ecosystem Management",
+    description: "Managed the vendor ecosystem serving 4,000+ users, including cost optimization, vendor lifecycle management, and adoption strategies.",
+  },
+  {
+    title: "Metrics-Driven Approach",
+    description: "Leveraged metrics (GetDX surveys, DORA metrics, Adoption tracking) to guide platform strategy and prove ROI.",
+  },
+];
+
+const deliveryPillars = [
+  {
+    number: 1,
+    title: "Onboarding",
+    subtitle: "Day 0 / Day 1 Experience",
+    brief: "Minimize time-to-first-commit. Every new developer or team adopting a new service should be productive within hours, not days.",
+    color: "emerald",
+    strategicIntent: "Onboarding is the first impression the platform makes on every developer and team. A poor onboarding experience signals that the platform does not value developer time, and first impressions are difficult to reverse. The goal is to make onboarding so smooth that developers arrive at productivity — their first meaningful commit, their first deployed service — within a single working day.",
+    capabilities: [
+      "Standardized project scaffolding via software templates",
+      "Self-service service catalog with clearly documented ownership, dependencies, and runbooks",
+      "Developer portal with unified access to tooling, docs, environments, and team resources",
+      "Automated access provisioning tied to team and role — no manual requests for standard access",
+      "Guided \"Day 1\" workflow: clone → configure → run locally → deploy to dev → verify",
+      "Onboarding health check: automated validation that a new developer's environment meets baseline standards",
+    ],
+  },
+  {
+    number: 2,
+    title: "Developing (Inner Loop)",
+    subtitle: "Inner loop optimization, cognitive load reduction, AI tooling",
+    brief: "Reduce cognitive load in the daily development cycle. Fast feedback, standardized environments, and AI-augmented workflows.",
+    color: "indigo",
+    strategicIntent: "The inner loop is the cycle a developer repeats dozens of times each day: write code, build, test, debug, repeat. Every minute of friction in this loop with slow builds, inconsistent local environments, missing context, manual configuration, compounds across the entire engineering organization. Optimizing the inner loop is the highest-leverage investment the platform team can make.",
+    capabilities: [
+      "Standardized local development environments (Dev Containers, Nix, or equivalent) — \"works on my machine\" eliminated",
+      "Fast local build and test cycles — targets: incremental build < 30s, unit test suite < 2 minutes",
+      "AI-assisted development tooling — structured evaluation and adoption of Amazon Q, Atlassian Intellgence, and emerging AI coding tools",
+      "Code quality guardrails embedded in the IDE — linting, SAST, dependency vulnerability scanning at authorship time",
+      "Pre-commit hooks and local policy enforcement — developers know about issues before they push",
+      "Cognitive load reduction — clear ownership models, reduced context switching, streamlined tool surface area"
+    ],
+  },
+  {
+    number: 3,
+    title: "Deployment (Outer Loop)",
+    subtitle: "Outer loop, CI/CD, progressive delivery, deployment intelligence",
+    brief: "Enable safe, frequent, and confident software delivery. Standardized pipelines, progressive delivery, and deployment intelligence.",
+    color: "amber",
+    strategicIntent: "The outer loop encompasses everything from code merging to production: CI/CD pipelines, environment promotion, release management, and deployment verification. The goal is not just speed — it is confidence. Developers should be able to deploy frequently because deployment is safe, observable, and reversible. High deployment frequency is only valuable when paired with low change failure rate.",
+    capabilities: [
+      "Standardized CI/CD pipeline templates — opinionated, secure, and extensible by teams",
+      "Progressive delivery — feature flags, canary releases, blue/green deployments as standard platform capabilities",
+      "Environment promotion model — clear dev → staging → production promotion with automated gate checks",
+      "Deployment verification — automated smoke tests, health checks, and rollback triggers",
+      "Release observability — deployment tracking, DORA metric dashboards, change impact visibility",
+      "Security and compliance embedded in pipeline — SAST, SCA, secrets scanning, image signing",
+    ],
+  },
+  {
+    number: 4,
+    title: "Enablement",
+    subtitle: "Documentation, self-service, golden paths, guardrails, support",
+    brief: "Ensure every developer can discover, learn, and apply platform capabilities independently.",
+    color: "rose",
+    strategicIntent: "Enablement is the connective tissue that makes the rest of the platform usable. A platform with powerful capabilities that developers cannot discover, understand, or apply independently has failed. The goal of enablement is to make developers self-sufficient — able to find answers, adopt new capabilities, and solve problems without needing to escalate to the platform team.",
+    capabilities: [
+      "Living documentation — owned by the platform team, versioned with the platform, and validated for accuracy quarterly",
+      "Developer portal with unified search across docs, services, APIs, and team contacts",
+      "Golden path catalog — curated, well-documented pathways for the most common developer journeys",
+      "Internal developer training — lunch-and-learns, office hours, video walkthroughs, and onboarding workshops",
+      "Changelog and release communication — every platform change communicated proactively with migration guides",
+      "Feedback channels — clear mechanisms for developers to report friction, request features, and escalate blockers"
+    ],
+  },
+];
+
+const operatingPillars = [
+  {
+    number: 5,
+    title: "Product Mindset",
+    subtitle: "Operate like a product team",
+    brief: "Deep understanding of developer personas, developer as customer, outcome-driven roadmap and prioritization, and continuous feedback loops.",
+    color: "cyan",
+    corePrinciples: [
+      "Coming Soon",
+    ],
+  },
+  {
+    number: 6,
+    title: "Research & Tool Evaluation",
+    subtitle: "Technology Radar",
+    brief: "Structured assessment of emerging tools and technologies",
+    color: "violet",
+    strategicIntent: "Coming Soon",
+  },
+  {
+    number: 7,
+    title: "Continuous Improvement",
+    subtitle: "Closing the loop — fast, medium, and slow feedback cycles",
+    brief: "The model operates at three distinct cadences. Each loop serves a different purpose and feeds into different decisions. A mature platform runs all three loops simultaneously.",
+    color: "emerald",
+    feedbackLoop: [
+      { loop: "Coming Soon", cadence: "Coming Soon", inputOutputs: "Coming Soon" },
+    ],
+  },
+];
+---
+
+<Layout title="Platform as a Product | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/leadership" class="hover:text-emerald-500 transition-colors">Leadership</a>
+          <span class="mx-2">/</span>
+          <a href="/leadership/devex-qe-leader" class="hover:text-emerald-500 transition-colors">DevEx & QE</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">Platform as a Product</span>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Platform as a <span class="text-amber-500">Product</span>
+          </h1>
+          <div class="bg-slate-800/50 p-6 rounded-lg border border-amber-500/30 mb-8">
+            <p class="text-sm text-amber-500 uppercase tracking-wider mb-2 font-medium">Core Principle</p>
+            <p class="text-slate-300 leading-relaxed text-lg">Treat the entire Developer Experience stack&mdash;from local development to production deployment&mdash;as an internally marketed product to maximize developer velocity and minimize cognitive load.</p>
+          </div>
+        </div>
+
+        <!-- Org Build -->
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">DevEx Organization Build and Management</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            {orgCapabilities.map((cap) => (
+              <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-amber-500 transition-all duration-300">
+                <h3 class="text-lg font-bold mb-3 text-amber-400">{cap.title}</h3>
+                <p class="text-slate-400 leading-relaxed">{cap.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Framework -->
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Framework</h2>
+          <p class="text-slate-400 mb-12 leading-relaxed">The PaaP Framework is organized into two layers. The Delivery Layer contains the four core pillars that define what the platform provides to developers. The Operating Layer contains three foundational capabilities that define how the platform is built, evolved, and managed. Together, these seven domains form a complete operating model.</p>
+
+          <!-- DELIVERY LAYER -->
+          <div class="mb-16">
+            <div class="mb-8">
+              <h3 class="text-xl md:text-2xl font-bold mb-2 text-amber-400 tracking-wider">Delivery Layer - What the platform provides</h3>
+              <!-- <p class="text-slate-400">What the platform provides</p> -->
+            </div>
+
+            <!-- Delivery Pillar Summary -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+              {deliveryPillars.map((pillar) => (
+                <a href={`#pillar-${pillar.number}`} class={`bg-slate-800/50 p-5 rounded-lg border border-slate-700 hover:border-${pillar.color}-500 transition-all duration-300 block`}>
+                  <div class={`text-${pillar.color}-500 text-sm font-mono font-bold mb-2`}>0{pillar.number}</div>
+                  <h4 class="text-lg font-bold mb-1 text-slate-200">{pillar.title}</h4>
+                  <p class="text-slate-400 text-sm">{pillar.brief}</p>
+                </a>
+              ))}
+            </div>
+
+            <!-- Delivery Pillar Detail Cards -->
+            <div class="space-y-8">
+              {deliveryPillars.map((pillar) => (
+                <div id={`pillar-${pillar.number}`} class="bg-slate-800/50 rounded-lg border border-slate-700 overflow-hidden">
+                  <div class={`border-l-4 border-${pillar.color}-500 p-8`}>
+                    <div class="mb-6">
+                      <div class={`text-${pillar.color}-500 text-sm font-mono font-bold mb-1`}>0{pillar.number}</div>
+                      <h4 class="text-xl font-bold text-slate-200">{pillar.title}</h4>
+                      <p class={`text-${pillar.color}-400 text-sm mt-1`}>{pillar.subtitle} &mdash; {pillar.brief}</p>
+                    </div>
+
+                    <div class="mb-6">
+                      <p class="text-xs text-slate-500 uppercase tracking-wider mb-2 font-medium">Strategic Intent</p>
+                      <p class="text-slate-300 leading-relaxed">{pillar.strategicIntent}</p>
+                    </div>
+
+                    <div>
+                      <p class="text-xs text-slate-500 uppercase tracking-wider mb-3 font-medium">Capabilities</p>
+                      <ul class="space-y-2">
+                        {pillar.capabilities.map((capability) => (
+                          <li class="flex items-start gap-3">
+                            <svg class={`w-5 h-5 text-${pillar.color}-500 mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-slate-300">{capability}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- OPERATING LAYER -->
+          <div>
+            <div class="mb-8">
+              <h3 class="text-xl md:text-2xl font-bold mb-2 text-amber-400 tracking-wider">Operating Layer - How the platform is built and evolved</h3>
+              <!-- <p class="text-slate-400">How the platform is built and evolved</p> -->
+            </div>
+
+            <!-- Operating Pillar Summary -->
+            <div class="grid md:grid-cols-3 gap-4 mb-12">
+              {operatingPillars.map((pillar) => (
+                <a href={`#pillar-${pillar.number}`} class={`bg-slate-800/50 p-5 rounded-lg border border-slate-700 hover:border-${pillar.color}-500 transition-all duration-300 block`}>
+                  <div class={`text-${pillar.color}-500 text-sm font-mono font-bold mb-2`}>0{pillar.number}</div>
+                  <h4 class="text-lg font-bold mb-1 text-slate-200">{pillar.title}</h4>
+                  <p class="text-slate-400 text-sm">{pillar.brief}</p>
+                </a>
+              ))}
+            </div>
+
+            <!-- Operating Pillar Detail Cards -->
+            <div class="space-y-8">
+              {operatingPillars.map((pillar) => (
+                <div id={`pillar-${pillar.number}`} class="bg-slate-800/50 rounded-lg border border-slate-700 overflow-hidden">
+                  <div class={`border-l-4 border-${pillar.color}-500 p-8`}>
+                    <div class="mb-6">
+                      <div class={`text-${pillar.color}-500 text-sm font-mono font-bold mb-1`}>0{pillar.number}</div>
+                      <h4 class="text-xl font-bold text-slate-200">{pillar.title}</h4>
+                      <p class={`text-${pillar.color}-400 text-sm mt-1`}>{pillar.subtitle} &mdash; {pillar.brief}</p>
+                    </div>
+
+                    {'corePrinciples' in pillar && (
+                      <div>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mb-3 font-medium">Core Principles</p>
+                        <ul class="space-y-2">
+                          {pillar.corePrinciples?.map((principle: string) => (
+                            <li class="flex items-start gap-3">
+                              <svg class={`w-5 h-5 text-${pillar.color}-500 mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                              </svg>
+                              <span class="text-slate-300">{principle}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {'strategicIntent' in pillar && (
+                      <div>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mb-2 font-medium">Strategic Intent</p>
+                        <p class="text-slate-300 leading-relaxed">{pillar.strategicIntent}</p>
+                      </div>
+                    )}
+
+                    {'feedbackLoop' in pillar && (
+                      <div>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mb-3 font-medium">Feedback Loops</p>
+                        <div class="overflow-x-auto">
+                          <table class="w-full text-left border-collapse">
+                            <thead>
+                              <tr class="border-b border-slate-600">
+                                <th class="py-3 pr-4 text-sm font-semibold text-slate-300">Feedback Loop</th>
+                                <th class="py-3 pr-4 text-sm font-semibold text-slate-300">Cadence</th>
+                                <th class="py-3 text-sm font-semibold text-slate-300">Input/Outputs</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {pillar.feedbackLoop?.map((row: { loop: string; cadence: string; inputOutputs: string }) => (
+                                <tr class="border-b border-slate-700/50">
+                                  <td class="py-3 pr-4 text-slate-300">{row.loop}</td>
+                                  <td class="py-3 pr-4 text-slate-400">{row.cadence}</td>
+                                  <td class="py-3 text-slate-400">{row.inputOutputs}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 text-center">
+          <a href="/leadership/devex-qe-leader" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to DevEx & QE Leader
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>
