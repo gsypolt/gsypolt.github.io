@@ -31,3 +31,24 @@ Modern, mobile-first professional portfolio built with Astro and Tailwind CSS, h
 ```bash
 git clone https://github.com/gsypolt/gsypolt.github.io.git
 cd gsypolt.github.io
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser to `http://localhost:4321` to view the site.
+
+### Other Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Build the production site to `./dist/` |
+| `npm run preview` | Preview the production build locally |
