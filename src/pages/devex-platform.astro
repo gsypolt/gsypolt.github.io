@@ -1,0 +1,386 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Contact from '../components/Contact.astro';
+
+const pillars = [
+  {
+    id: "build",
+    title: "Build & Release Excellence",
+    color: "violet",
+    icon: "rocket",
+    focus: "Establish world-class CI/CD pipelines, source code management, artifact governance, and deployment automation that enable teams to ship reliable software at any scale — with speed, repeatability, and security baked in.",
+    responsibilities: [
+      "Design and operate CI/CD pipeline standards across all engineering teams",
+      "Manage SCM strategy, branching models, and governance",
+      "Own artifact lifecycle — build, scan, cache, promote, and distribute",
+      "Establish release orchestration and deployment automation practices",
+      "Drive software supply chain security (SBOM, CVE scanning, policy enforcement)",
+      "Define infrastructure-as-code standards and self-service provisioning",
+      "Enable feature flag frameworks for progressive delivery and experimentation",
+      "Maintain developer portal and service catalog for discoverability",
+    ],
+    categories: [
+      { name: "CI/CD & Pipeline Orchestration", built: ["GitLab CI/CD","GitHub Actions","Jenkins","CircleCI"], opportunities: ["Argo Workflows","Buildkite"] },
+      { name: "Source Code Management", built: ["GitLab","GitHub","Bitbucket","Azure DevOps Repos"] },
+      { name: "Artifact & Dependency Management", built: ["JFrog Artifactory","JFrog Xray","JFrog Curation","Socket.dev","AWS ECR"], opportunities: ["Sonatype","AWS CodeArtifact"] },
+      { name: "Infrastructure as Code", built: ["Terraform","CloudFormation","Ansible"], opportunities: ["AWS CDK","OpenTofu","Crossplane","Pulumi"] },
+      { name: "Feature Flags & Progressive Delivery", built: ["LaunchDarkly"], opportunities: ["Flagsmith","Split.io","Unleash","OpenFeature"] },
+      { name: "Container & Build Tools", built: ["Docker"], opportunities: ["Podman","Buildpacks","Bazel","Nx"] },
+      { name: "AI-Powered Build Acceleration", built: ["GitLab Duo (RCA)","Custom Agents"], opportunities: ["Harness AI","JFrog ML"] },
+    ],
+  },
+  {
+    id: "productivity",
+    title: "Developer Productivity & Collaboration",
+    color: "cyan",
+    icon: "bolt",
+    focus: "Equip developers with best-in-class IDEs, AI coding assistants, collaboration platforms, and knowledge management tools that minimize cognitive overhead, reduce toil, and create an environment where experimentation and innovation thrive.",
+    responsibilities: [
+      "Curate and standardize the developer toolchain — IDEs, extensions, and local dev environments",
+      "Drive adoption of AI coding assistants and measure productivity impact",
+      "Own project tracking, backlog management, and agile tooling (Jira ecosystem)",
+      "Manage documentation, knowledge bases, and collaboration platforms",
+      "Define and enforce developer environment standards (devcontainers, golden paths)",
+      "Build internal tools and automations that eliminate repetitive toil",
+      "Establish DORA and SPACE metrics programs to measure developer productivity",
+      "Champion developer-first culture — feedback loops, surveys, DX benchmarking",
+      "Drive Atlassian Intelligence and AI platform capabilities across the toolchain",
+    ],
+    categories: [
+      { name: "AI Coding Assistants", built: ["GitHub Copilot","Amazon Q","Gemini (Personal)","Claude Code (Personal)"], opportunities: ["Cursor","Windsurf"] },
+      { name: "IDEs & Dev Environments", built: ["VS Code","JetBrains Suite","IntelliJ","GitLab Web IDE"], opportunities: ["Google Antigravity","Dev Containers","GitHub Codespaces","Coder","Gitpod"] },
+      { name: "Project & Work Management", built: ["Atlassian Jira Cloud"], opportunities: ["Linear","ClickUp","Azure Boards","Atlassian Product Discovery","Shortcut","Monday.com","Aha"] },
+      { name: "Knowledge & Documentation", built: ["Atlassian Confluence Cloud"], opportunities: ["Notion","GitBook","Swimm","Archbee"] },
+      { name: "Communication & Collaboration", built: ["Slack","Microsoft Teams","Loom","Figma","Miro"], opportunities: ["Mural"] },
+      { name: "SDLC AI", built: ["Miro AI","Figma AI","Vibe Coding (Claude Code)","Atlassian Rovo","Prompt Catalog","GitLab Migration Agent","Tech Upgrade Agent","Governance","MCP Servers"], opportunities: ["JSM AI Virtual Agent"] },
+      { name: "Developer Metrics & DORA", built: ["GetDX","Custom DORA"], opportunities: ["LinearB","Jellyfish","Athenian","Pluralsight Flow","Swarmia"] },
+      { name: "Internal Developer Platform (IDP)", built: ["Backstage (Spotify)"], opportunities: ["Cortex","Cycloid","OpsLevel","Compass (Atlassian)"] },
+    ],
+  },
+  {
+    id: "quality",
+    title: "Quality Engineering Infrastructure",
+    color: "emerald",
+    icon: "shield",
+    focus: "Transform quality from a gate at the end of delivery into a shared discipline embedded throughout the SDLC. Build testing infrastructure, observability platforms, and AI-powered quality capabilities that give teams confidence to ship fast without sacrificing reliability.",
+    responsibilities: [
+      "Define testing strategy across unit, integration, E2E, performance, and security testing",
+      "Build and operate shared test infrastructure — environments, data, and execution grids",
+      "Drive shift-left testing practices — quality ownership at the team level",
+      "Establish static analysis, code coverage, and quality gate enforcement in pipelines",
+      "Own observability platforms — logging, metrics, tracing, alerting, and SLO management",
+      "Lead security testing integration — SAST, DAST, container scanning, dependency audits",
+      "Drive chaos engineering and resilience testing practices",
+      "Define and track quality KPIs: defect escape rate, test coverage, MTTR, change failure rate",
+      "Evaluate and implement AI-powered test generation and autonomous testing capabilities",
+    ],
+    categories: [
+      { name: "Test Automation Frameworks", built: ["Selenium","Playwright","Cypress","Appium","Pytest","Vitest"], opportunities: ["TestNG","JUnit 5"] },
+      { name: "API & Contract Testing", built: ["Postman / Newman","Pact","REST Assured"], opportunities: ["k6","Hoppscotch"] },
+      { name: "AI-Powered Testing", built: ["Applitools (Visual AI)","Testim"], opportunities: ["Diffblue Cover","CodiumAI / Qodo","Functionize","Reflect.run"] },
+      { name: "Performance & Load Testing", built: ["Gatling","Artillery"], opportunities: ["k6","Locust","Grafana Cloud k6"] },
+      { name: "Security Testing (DevSecOps)", built: ["SonarQube","Checkmarx (SAST)","OWASP ZAP (DAST)"], opportunities: ["Snyk","Trivy","Semgrep","Aqua Security"] },
+      { name: "Code Quality & Static Analysis", built: ["SonarQube / SonarCloud","ESLint / Prettier"], opportunities: ["Checkstyle","Coverity","Codacy","DeepSource"] },
+      { name: "Observability & Monitoring", built: ["Datadog","Grafana + Prometheus","Splunk","New Relic"], opportunities: ["OpenTelemetry","Dynatrace","Honeycomb"] },
+      { name: "Test Management & Reporting", built: ["Zephyr Scale (Jira)","Xray (Jira)","qTest"], opportunities: ["TestRail","Allure Report","ReportPortal"] },
+    ],
+  },
+];
+
+function catToolCount(cat: any) {
+  if (cat.tools) return cat.tools.length;
+  return (cat.built?.length || 0) + (cat.opportunities?.length || 0);
+}
+const toolCounts = pillars.map(p => p.categories.reduce((a, c) => a + catToolCount(c), 0));
+---
+
+<Layout title="DevEx Platform Catalog | Greg Sypolt">
+  <Navigation />
+  <div class="pt-16">
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-slate-400">
+          <a href="/" class="hover:text-emerald-500 transition-colors">Home</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">DevEx Platform</span>
+        </nav>
+
+        <!-- Header -->
+        <div class="mb-12">
+          <p class="text-xs tracking-widest uppercase text-slate-500 mb-3">Developer Experience Platform</p>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            DevEx Platform <span class="text-emerald-500">Catalog</span>
+          </h1>
+          <p class="text-lg text-slate-400 leading-relaxed max-w-3xl">
+            A developer-first ecosystem of tools, platforms, and AI capabilities that empower engineers to deliver faster and higher-quality software — fostering a culture of innovation and experimentation.
+          </p>
+          <div class="flex gap-3 flex-wrap mt-6">
+            {["Developer First", "AI-Augmented", "Platform as a Product"].map(tag => (
+              <span class="bg-slate-800 border border-slate-700 rounded-full px-4 py-1 text-xs font-semibold text-slate-300">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Pillar Tabs -->
+        <div class="flex gap-3 flex-wrap mb-10">
+          {pillars.map(pl => (
+            <button
+              data-pillar-tab={pl.id}
+              class:list={[
+                "pillar-tab px-5 py-2.5 rounded-xl text-sm font-bold cursor-pointer border-none transition-all duration-200",
+                `pillar-tab-${pl.color}`,
+              ]}
+            >
+              {pl.title}
+            </button>
+          ))}
+        </div>
+
+        <!-- Pillar Sections -->
+        {pillars.map((p, pi) => (
+          <div data-pillar-content={p.id} class="pillar-content hidden">
+            <!-- Banner -->
+            <div class:list={[
+              "rounded-2xl p-6 mb-8",
+              p.color === "violet" && "bg-gradient-to-br from-violet-600 to-violet-800",
+              p.color === "cyan" && "bg-gradient-to-br from-cyan-600 to-cyan-800",
+              p.color === "emerald" && "bg-gradient-to-br from-emerald-600 to-emerald-800",
+            ]}>
+              <div class="flex items-center gap-3 mb-3">
+                <svg class="w-8 h-8 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {p.icon === "rocket" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />}
+                  {p.icon === "bolt" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />}
+                  {p.icon === "shield" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />}
+                </svg>
+                <div>
+                  <p class="text-xs tracking-widest uppercase text-white/60 mb-1">Platform Pillar</p>
+                  <h2 class="text-2xl font-extrabold text-white">{p.title}</h2>
+                </div>
+              </div>
+              <p class="text-white/80 text-sm leading-relaxed max-w-3xl">{p.focus}</p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8">
+              <!-- Responsibilities -->
+              <div class="lg:col-span-2 bg-slate-800/50 border border-slate-700 rounded-2xl p-6">
+                <h3 class="text-xs tracking-widest uppercase text-slate-500 mb-5">Key Responsibilities</h3>
+                <ul class="space-y-3">
+                  {p.responsibilities.map((r, i) => (
+                    <li class="flex gap-3 items-start">
+                      <span class:list={[
+                        "min-w-[1.375rem] h-[1.375rem] rounded-full flex items-center justify-center text-xs font-extrabold text-white flex-shrink-0 mt-0.5",
+                        p.color === "violet" && "bg-violet-600",
+                        p.color === "cyan" && "bg-cyan-600",
+                        p.color === "emerald" && "bg-emerald-600",
+                      ]}>{i + 1}</span>
+                      <span class="text-sm text-slate-300 leading-relaxed">{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Tool Categories -->
+              <div class="lg:col-span-3">
+                <h3 class="text-xs tracking-widest uppercase text-slate-500 mb-4">Tools, Platforms & Vendor Solutions</h3>
+                <div class="flex flex-col gap-2">
+                  {p.categories.map((cat, ci) => (
+                    <div
+                      class="category-accordion bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-colors duration-200"
+                      data-pillar={p.id}
+                      data-cat-index={ci}
+                      data-accent={p.color}
+                    >
+                      <button
+                        class="category-toggle w-full flex items-center justify-between px-5 py-3.5 bg-transparent border-none cursor-pointer text-left"
+                      >
+                        <div class="flex items-center gap-3">
+                          <span class:list={[
+                            "rounded-full px-2.5 py-0.5 text-xs font-extrabold border",
+                            p.color === "violet" && "bg-violet-500/20 text-violet-400 border-violet-500/30",
+                            p.color === "cyan" && "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+                            p.color === "emerald" && "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+                          ]}>{catToolCount(cat)}</span>
+                          <span class="text-sm font-semibold text-slate-200">{cat.name}</span>
+                        </div>
+                        <span class="category-chevron text-slate-600 transition-transform duration-200 text-xs">&#9660;</span>
+                      </button>
+                      <div class="category-panel hidden px-5 pb-5">
+                        {cat.tools ? (
+                          <div class="flex flex-wrap gap-2">
+                            {cat.tools.map((tool: string) => (
+                              <span class:list={[
+                                "rounded-lg px-3 py-1.5 text-xs font-medium border border-white/5",
+                                p.color === "violet" && "bg-violet-500/15 text-violet-300",
+                                p.color === "cyan" && "bg-cyan-500/15 text-cyan-300",
+                                p.color === "emerald" && "bg-emerald-500/15 text-emerald-300",
+                              ]}>{tool}</span>
+                            ))}
+                          </div>
+                        ) : (
+                          <div class="space-y-4">
+                            {cat.built && cat.built.length > 0 && (
+                              <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                  <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                                  <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Established</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                  {cat.built.map((tool: string) => (
+                                    <span class="rounded-lg px-3 py-1.5 text-xs font-medium border border-emerald-500/20 bg-emerald-500/10 text-emerald-300">{tool}</span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                            {cat.opportunities && cat.opportunities.length > 0 && (
+                              <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                  <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+                                  </svg>
+                                  <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Opportunities</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                  {cat.opportunities.map((tool: string) => (
+                                    <span class="rounded-lg px-3 py-1.5 text-xs font-medium border border-amber-500/20 bg-amber-500/10 text-amber-300">{tool}</span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        <!-- Stats Footer -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+          {pillars.map((pl, i) => (
+            <div
+              data-stat-card={pl.id}
+              class="bg-slate-800/50 border border-slate-700 rounded-2xl p-5 transition-colors duration-200"
+            >
+              <div class="flex items-center gap-2 mb-2">
+                <svg class:list={["w-5 h-5", pl.color === "violet" && "text-violet-400", pl.color === "cyan" && "text-cyan-400", pl.color === "emerald" && "text-emerald-400"]} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {pl.icon === "rocket" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />}
+                  {pl.icon === "bolt" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />}
+                  {pl.icon === "shield" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />}
+                </svg>
+                <span class="text-sm font-semibold text-slate-500">{pl.title}</span>
+              </div>
+              <div class:list={[
+                "text-3xl font-extrabold",
+                pl.color === "violet" && "text-violet-500",
+                pl.color === "cyan" && "text-cyan-500",
+                pl.color === "emerald" && "text-emerald-500",
+              ]}>
+                {toolCounts[i]}+
+              </div>
+              <div class="text-xs text-slate-600 mt-0.5">tools & platforms</div>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-center text-xs text-slate-700 mt-6">DevEx Platform &middot; Developer-First &middot; AI-Augmented &middot; Platform as a Product</p>
+
+        <!-- Back link -->
+        <div class="mt-12 text-center">
+          <a href="/" class="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </section>
+    <Contact />
+  </div>
+</Layout>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.pillar-tab');
+  const contents = document.querySelectorAll<HTMLElement>('.pillar-content');
+  const statCards = document.querySelectorAll<HTMLElement>('[data-stat-card]');
+  const pillarIds = ['build', 'productivity', 'quality'];
+  const colorMap: Record<string, { active: string; border: string }> = {
+    build: { active: 'bg-gradient-to-br from-violet-600 to-violet-800 text-white shadow-lg shadow-violet-500/20', border: 'border-violet-500' },
+    productivity: { active: 'bg-gradient-to-br from-cyan-600 to-cyan-800 text-white shadow-lg shadow-cyan-500/20', border: 'border-cyan-500' },
+    quality: { active: 'bg-gradient-to-br from-emerald-600 to-emerald-800 text-white shadow-lg shadow-emerald-500/20', border: 'border-emerald-500' },
+  };
+  const inactiveClass = 'bg-slate-800 text-slate-400';
+
+  function activatePillar(id: string) {
+    tabs.forEach(tab => {
+      const tabId = tab.getAttribute('data-pillar-tab')!;
+      const classes = colorMap[tabId];
+      tab.className = 'pillar-tab px-5 py-2.5 rounded-xl text-sm font-bold cursor-pointer border-none transition-all duration-200 ' +
+        (tabId === id ? classes.active : inactiveClass);
+    });
+
+    contents.forEach(el => {
+      el.classList.toggle('hidden', el.getAttribute('data-pillar-content') !== id);
+    });
+
+    statCards.forEach(card => {
+      const cardId = card.getAttribute('data-stat-card')!;
+      if (cardId === id) {
+        card.classList.remove('border-slate-700');
+        card.classList.add(colorMap[cardId].border);
+      } else {
+        card.classList.add('border-slate-700');
+        card.classList.remove(colorMap[cardId].border);
+      }
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const id = tab.getAttribute('data-pillar-tab')!;
+      activatePillar(id);
+      // Close all accordions when switching tabs
+      document.querySelectorAll('.category-accordion').forEach(acc => {
+        acc.querySelector('.category-panel')?.classList.add('hidden');
+        const chevron = acc.querySelector('.category-chevron') as HTMLElement;
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+        acc.classList.remove('border-violet-500', 'border-cyan-500', 'border-emerald-500');
+        acc.classList.add('border-slate-700');
+      });
+    });
+  });
+
+  // Accordion toggle
+  document.querySelectorAll('.category-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const accordion = btn.closest('.category-accordion')!;
+      const panel = accordion.querySelector('.category-panel')!;
+      const chevron = accordion.querySelector('.category-chevron') as HTMLElement;
+      const accent = accordion.getAttribute('data-accent')!;
+      const borderClass = `border-${accent}-500`;
+      const isOpen = !panel.classList.contains('hidden');
+
+      if (isOpen) {
+        panel.classList.add('hidden');
+        chevron.style.transform = 'rotate(0deg)';
+        accordion.classList.remove(borderClass);
+        accordion.classList.add('border-slate-700');
+      } else {
+        panel.classList.remove('hidden');
+        chevron.style.transform = 'rotate(180deg)';
+        accordion.classList.add(borderClass);
+        accordion.classList.remove('border-slate-700');
+      }
+    });
+  });
+
+  // Initialize first pillar as active
+  activatePillar('build');
+</script>
