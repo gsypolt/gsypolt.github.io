@@ -1,0 +1,86 @@
+---
+const pillars = [
+  {
+    title: "Build & Release Excellence",
+    color: "violet",
+    icon: "rocket",
+    description: "CI/CD pipelines, artifact governance, deployment automation, and supply chain security.",
+    toolCount: 49,
+  },
+  {
+    title: "Developer Productivity & Collaboration",
+    color: "cyan",
+    icon: "bolt",
+    description: "AI coding assistants, IDEs, collaboration platforms, and developer metrics programs.",
+    toolCount: 50,
+  },
+  {
+    title: "Quality Engineering Infrastructure",
+    color: "emerald",
+    icon: "shield",
+    description: "Test automation, observability, security testing, and AI-powered quality capabilities.",
+    toolCount: 55,
+  },
+];
+---
+
+<section class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-xs tracking-widest uppercase text-slate-500 mb-3">Developer Experience Platform</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        DevEx Platform <span class="text-emerald-500">Catalog</span>
+      </h2>
+      <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
+        A developer-first ecosystem of tools, platforms, and AI capabilities — organized across three strategic pillars.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-6 mb-10">
+      {pillars.map(p => (
+        <div class:list={[
+          "bg-slate-800/50 p-6 rounded-xl border border-slate-700 transition-all duration-300",
+          p.color === "violet" && "hover:border-violet-500",
+          p.color === "cyan" && "hover:border-cyan-500",
+          p.color === "emerald" && "hover:border-emerald-500",
+        ]}>
+          <div class="flex items-center gap-2 mb-2">
+            <svg class:list={["w-6 h-6", p.color === "violet" && "text-violet-400", p.color === "cyan" && "text-cyan-400", p.color === "emerald" && "text-emerald-400"]} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {p.icon === "rocket" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />}
+              {p.icon === "bolt" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />}
+              {p.icon === "shield" && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />}
+            </svg>
+            <h3 class:list={[
+              "text-lg font-bold",
+              p.color === "violet" && "text-violet-400",
+              p.color === "cyan" && "text-cyan-400",
+              p.color === "emerald" && "text-emerald-400",
+            ]}>{p.title}</h3>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">{p.description}</p>
+          <div class:list={[
+            "text-2xl font-extrabold",
+            p.color === "violet" && "text-violet-500",
+            p.color === "cyan" && "text-cyan-500",
+            p.color === "emerald" && "text-emerald-500",
+          ]}>
+            {p.toolCount}+
+            <span class="text-xs font-normal text-slate-500 ml-1">tools & platforms</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/devex-platform"
+        class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+      >
+        Explore the Full Platform
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

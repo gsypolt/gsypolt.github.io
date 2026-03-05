@@ -13,7 +13,7 @@ export default {
       pattern: /text-(emerald|indigo|amber|rose|cyan|violet)-(400|500)/,
     },
     {
-      pattern: /bg-(emerald|indigo|amber|rose|cyan|violet)-500\/(5|10)/,
+      pattern: /bg-(emerald|indigo|amber|rose|cyan|violet)-500\/(5|10|15|20)/,
     },
     // Rose color extensions needed for leadership pages
     'text-rose-400',
@@ -44,8 +44,10 @@ export default {
     extend: {
       colors: {
         emerald: {
+          300: '#6ee7b7',
           500: '#10b981',
           600: '#059669',
+          800: '#065f46',
         },
         indigo: {
           400: '#818cf8',
@@ -60,12 +62,18 @@ export default {
           500: '#f43f5e',
         },
         cyan: {
+          300: '#67e8f9',
           400: '#22d3ee',
           500: '#06b6d4',
+          600: '#0891b2',
+          800: '#155e75',
         },
         violet: {
+          300: '#c4b5fd',
           400: '#a78bfa',
           500: '#8b5cf6',
+          600: '#7c3aed',
+          800: '#5b21b6',
         },
         slate: {
           200: '#e2e8f0',
